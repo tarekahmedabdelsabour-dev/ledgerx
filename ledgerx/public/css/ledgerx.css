@@ -1,0 +1,161 @@
+/*
+ * LedgerX - desk theme
+ *
+ * Frappe v17 ("Espresso") is driven by CSS custom properties, so the theme is mostly a set
+ * of token overrides: change a value here and it applies everywhere that token is used.
+ * This file loads after Frappe/ERPNext's bundles, so equal-specificity rules win.
+ *
+ * Palette
+ *   navy  #071A3A / #0B2A5B   identity, headings, dark mode surfaces
+ *   teal  #0F766E / #14B8A6   primary actions, links, focus, selection
+ *   gold  #F5A524 / #FFD166   accent (the X in the logo), highlights, warnings of attention
+ */
+
+:root,
+[data-theme="light"] {
+	/* ---- LedgerX palette ---- */
+	--lx-navy-950: #071a3a;
+	--lx-navy-900: #0b2a5b;
+	--lx-teal-50: #f0fdfa;
+	--lx-teal-100: #ccfbf1;
+	--lx-teal-200: #99f6e4;
+	--lx-teal-500: #14b8a6;
+	--lx-teal-600: #0d9488;
+	--lx-teal-700: #0f766e;
+	--lx-teal-800: #115e59;
+	--lx-gold-400: #ffd166;
+	--lx-gold-500: #f5a524;
+	--lx-gold-50: #fff8e6;
+
+	/* Latin first (Inter is bundled with Frappe), Arabic-capable fonts right after it so
+	   Arabic text never falls through to a generic fallback. */
+	--lx-font: "InterVariable", "Inter", "Cairo", "Tajawal", "Segoe UI", "Tahoma", "Noto Sans Arabic",
+		"Arial", sans-serif;
+	--font-stack: var(--lx-font);
+
+	/* ---- Primary action + links ---- */
+	--btn-primary: var(--lx-teal-700);
+	--primary-color: var(--lx-teal-700);
+	--border-primary: var(--lx-teal-600);
+	--ink-blue-link: var(--lx-teal-700);
+
+	/* ---- Surfaces: a faint cool tint instead of neutral grey ---- */
+	--surface-sidebar: #f3f8fa;
+	--navbar-bg: #f3f8fa;
+	--sidebar-select-color: var(--lx-teal-100);
+	--highlight-color: var(--lx-teal-50);
+	--subtle-accent: #f6fafb;
+	--control-bg: #eef4f6;
+	--control-bg-on-gray: #e4edf0;
+	--border-color: #dde7eb;
+	--dark-border-color: #c8d6dc;
+
+	/* ---- Text ---- */
+	--heading-color: var(--lx-navy-950);
+	--text-color: #1b2b3f;
+	--text-muted: #4b5f75;
+	--text-light: #6b7f93;
+
+	/* ---- Radius: slightly rounder, in line with the logo's rounded tile.
+	   Overriding the canonical --radius-* scale also updates the legacy --border-radius-* aliases. ---- */
+	--radius-md: 10px;
+	--radius-lg: 14px;
+}
+
+[data-theme="dark"],
+.dark {
+	--btn-primary: var(--lx-teal-500);
+	--primary-color: var(--lx-teal-500);
+	--border-primary: var(--lx-teal-500);
+	--ink-blue-link: var(--lx-teal-200);
+
+	--surface-sidebar: #0a1a33;
+	--navbar-bg: #0a1a33;
+	--sidebar-select-color: #12335a;
+	--highlight-color: #0f2a4a;
+	--border-color: #1d3557;
+	--dark-border-color: #2a4a73;
+	--heading-color: #f4f8fb;
+	--text-color: #d6e2ee;
+	--text-muted: #9db3c8;
+	--text-light: #7f97ae;
+}
+
+/* ---------- Primary button: keep text legible on teal ---------- */
+.btn.btn-primary,
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+	color: #ffffff;
+}
+
+.btn.btn-primary:hover {
+	background-color: var(--lx-teal-800);
+}
+
+[data-theme="dark"] .btn.btn-primary,
+.dark .btn.btn-primary {
+	color: var(--lx-navy-950);
+}
+
+[data-theme="dark"] .btn.btn-primary:hover,
+.dark .btn.btn-primary:hover {
+	background-color: var(--lx-teal-200);
+}
+
+/* ---------- Focus rings ---------- */
+.form-control:focus,
+.input-with-feedback:focus,
+.frappe-control input:focus,
+.frappe-control textarea:focus,
+.frappe-control select:focus {
+	border-color: var(--lx-teal-600);
+	box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.22);
+	outline: none;
+}
+
+:focus-visible {
+	outline-color: var(--lx-teal-600);
+}
+
+/* ---------- Brand logo in the navbar / sidebar header: never stretch the wordmark ---------- */
+.navbar-brand img,
+.navbar .app-logo,
+.app-logo,
+.sidebar-header img {
+	height: 30px;
+	width: auto;
+	max-width: 100%;
+	object-fit: contain;
+}
+
+/* ---------- Text selection uses the brand teal ---------- */
+::selection {
+	background: var(--lx-teal-200);
+	color: var(--lx-navy-950);
+}
+
+/* ---------- Scrollbars ---------- */
+* {
+	scrollbar-color: #b8cad3 transparent;
+}
+
+[data-theme="dark"] * {
+	scrollbar-color: #2a4a73 transparent;
+}
+
+/* ---------- Arabic / RTL ---------- */
+html[dir="rtl"] body,
+html[dir="rtl"] .btn,
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select {
+	font-family: var(--lx-font);
+	letter-spacing: 0; /* letter-spacing breaks Arabic letter joining */
+}
+
+html[dir="rtl"] .page-title .title-text,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3 {
+	letter-spacing: 0;
+}

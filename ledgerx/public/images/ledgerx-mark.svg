@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LedgerX">
+  <defs>
+    <linearGradient id="lx-bg" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B2A5B"/>
+      <stop offset="0.55" stop-color="#0B5E78"/>
+      <stop offset="1" stop-color="#14B8A6"/>
+    </linearGradient>
+    <linearGradient id="lx-gold" x1="30" y1="22" x2="47" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD166"/>
+      <stop offset="1" stop-color="#F5A524"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="17" fill="url(#lx-bg)"/>
+  <g stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="1.5" stroke-linecap="round">
+    <line x1="12" y1="20" x2="52" y2="20"/>
+    <line x1="12" y1="30" x2="52" y2="30"/>
+    <line x1="12" y1="40" x2="52" y2="40"/>
+  </g>
+  <path d="M20 14 V47 H50" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="url(#lx-gold)" stroke-width="6" stroke-linecap="round">
+    <line x1="31" y1="23" x2="45" y2="37"/>
+    <line x1="45" y1="23" x2="31" y2="37"/>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+[project]
+name = "ledgerx"
+authors = [
+    { name = "LedgerX", email = "hello@ledgerx.local" }
+]
+description = "LedgerX - custom branding and interface layer for ERPNext (Arabic + English)"
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = []
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+# Matches the Frappe version the erpnext fork is on (17.x develop).
+[tool.bench.frappe-dependencies]
+frappe = ">=17.0.0-dev,<18.0.0"

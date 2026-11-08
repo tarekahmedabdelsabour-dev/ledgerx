@@ -1,0 +1,107 @@
+/*
+ * LedgerX - website / login / portal theme
+ * Loaded through web_include_css. Uses the same token names as ledgerx.css.
+ */
+
+:root,
+[data-theme="light"] {
+	--lx-navy-950: #071a3a;
+	--lx-navy-900: #0b2a5b;
+	--lx-teal-50: #f0fdfa;
+	--lx-teal-200: #99f6e4;
+	--lx-teal-500: #14b8a6;
+	--lx-teal-600: #0d9488;
+	--lx-teal-700: #0f766e;
+	--lx-teal-800: #115e59;
+	--lx-gold-500: #f5a524;
+
+	--lx-font: "InterVariable", "Inter", "Cairo", "Tajawal", "Segoe UI", "Tahoma", "Noto Sans Arabic",
+		"Arial", sans-serif;
+	--font-stack: var(--lx-font);
+
+	--btn-primary: var(--lx-teal-700);
+	--primary-color: var(--lx-teal-700);
+	--border-primary: var(--lx-teal-600);
+	--ink-blue-link: var(--lx-teal-700);
+	--heading-color: var(--lx-navy-950);
+	--radius-md: 10px;
+	--radius-lg: 14px;
+}
+
+/* ---------- Login page ---------- */
+body:has(.for-login),
+body:has(.for-forgot),
+body:has(.for-signup),
+body:has(.for-email-login),
+body:has(.for-login-with-email-link),
+body:has(.for-reset-password) {
+	background:
+		radial-gradient(1100px 600px at 100% -10%, rgba(20, 184, 166, 0.18), transparent 60%),
+		radial-gradient(900px 520px at -10% 110%, rgba(11, 42, 91, 0.16), transparent 60%),
+		linear-gradient(180deg, #f6fafb 0%, #eaf2f5 100%);
+	background-attachment: fixed;
+}
+
+.for-login .page-card,
+.for-forgot .page-card,
+.for-signup .page-card,
+.for-email-login .page-card,
+.for-login-with-email-link .page-card,
+.for-reset-password .page-card {
+	background: #ffffff;
+	border: 1px solid #dde7eb;
+	box-shadow: 0 18px 50px -18px rgba(11, 42, 91, 0.28);
+}
+
+/* The logo is a wide wordmark: fix the height and let the width follow. */
+.page-card-head .app-logo,
+.for-login .app-logo {
+	height: 46px;
+	width: auto;
+	max-width: 100%;
+	object-fit: contain;
+}
+
+.page-card .btn-primary,
+.page-card .btn.btn-primary {
+	background-color: var(--lx-teal-700);
+	border-color: var(--lx-teal-700);
+	color: #ffffff;
+}
+
+.page-card .btn-primary:hover,
+.page-card .btn.btn-primary:hover {
+	background-color: var(--lx-teal-800);
+	border-color: var(--lx-teal-800);
+}
+
+.page-card .form-control:focus {
+	border-color: var(--lx-teal-600);
+	box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.22);
+}
+
+.page-card a {
+	color: var(--lx-teal-700);
+}
+
+/* ---------- Arabic / RTL ---------- */
+html[dir="rtl"] body,
+html[dir="rtl"] .btn,
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select {
+	font-family: var(--lx-font);
+	letter-spacing: 0;
+}
+
+html[dir="rtl"] .page-card-head {
+	text-align: right;
+}
+
+/* ---------- Website navbar / footer brand ---------- */
+.navbar-brand img {
+	height: 30px;
+	width: auto;
+	max-width: 100%;
+	object-fit: contain;
+}
