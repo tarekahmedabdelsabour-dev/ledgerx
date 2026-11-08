@@ -1,6 +1,7 @@
 # LedgerX
 
-Custom branding and interface layer for ERPNext (Frappe v17) — Arabic and English, light and dark.
+Custom branding and interface layer for ERPNext (Frappe **v16 stable**; v17 develop also works) —
+Arabic and English, light and dark.
 LedgerX is a separate Frappe app that sits on top of ERPNext, so the ERPNext fork stays
 untouched and you can keep merging upstream updates.
 
@@ -9,7 +10,20 @@ sidebar, borders, dark mode), the login page, the website/portal header, the bro
 Arabic/RTL typography, and the branding records (Website Settings, Navbar Settings) which it
 re-applies after every `bench migrate`.
 
-## Install (WSL / bench)
+## New bench on the stable version (v16)
+
+Needs Python 3.14 and Node 24+ (the same tools Frappe 17 needs).
+
+```bash
+cd ~
+bench init --frappe-branch version-16 frappe-bench-v16
+cd frappe-bench-v16
+bench new-site mysite.localhost
+bench get-app erpnext --branch version-16
+bench --site mysite.localhost install-app erpnext
+```
+
+## Install LedgerX (WSL / bench)
 
 Run these inside your bench folder (the one that already has `erpnext` installed):
 
