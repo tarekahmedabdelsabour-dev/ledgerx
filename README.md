@@ -83,7 +83,21 @@ no `bench build`.
   through `ledgerx/boot.py`, without touching ERPNext. They are still declared in `erpnext/hooks.py`,
   so places that read that file directly (the legacy `/apps` page, the setup wizard intro) keep the
   ERPNext name until you rename it in your own fork, which is the step planned before release.
-- The "Framework" tile (Frappe's admin area) keeps its own name and generic icon.
+- Every other app (HRMS, Framework, anything you install later) gets the LedgerX logo but keeps its
+  own name, so the tiles on the home screen stay distinguishable. To change that, edit
+  `RENAMED_APPS` (apps shown under the LedgerX name) and `KEEP_LOGO_APPS` (apps that keep their own
+  logo) at the top of `ledgerx/boot.py`.
+
+## Apps you add later
+
+You do not need to touch LedgerX when you install another app (HRMS, Lending, Healthcare, ...):
+
+- **Logo:** applied automatically to every app (`ledgerx/boot.py` loops over all installed apps).
+- **Watermark on pages and print:** the page watermark is global CSS, and the "LedgerX" Print Style
+  applies to every print format of every app. Run `bench migrate` after installing an app so the
+  Print Style is rebuilt.
+- Not covered: an app's own *custom* print format that paints its own white background can hide
+  the print watermark, and pages an app renders outside the desk (portal, website) have no watermark.
 - The Cairo/Tajawal fonts are used only if installed on the device; otherwise Arabic falls back to
   Segoe UI / Tahoma. To guarantee the same font everywhere, self-host Cairo under `public/fonts/`.
 
