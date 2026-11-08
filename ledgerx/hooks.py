@@ -13,15 +13,9 @@ required_apps = ["erpnext"]
 # Logo used by the desk (apps screen, sidebar header) and as the fallback brand logo.
 app_logo_url = "/assets/ledgerx/images/ledgerx-logo.svg"
 
-add_to_apps_screen = [
-	{
-		"name": app_name,
-		"logo": "/assets/ledgerx/images/ledgerx-mark.svg",
-		"title": app_title,
-		"route": "/desk/home",
-		"sequence_id": 0,
-	}
-]
+# LedgerX has no apps-screen tile of its own on purpose: ERPNext's tile is shown as LedgerX
+# instead (name + logo), see ledgerx/boot.py. A second tile would open the same screen.
+boot_session = "ledgerx.boot.extend_bootinfo"
 
 # Desk (the logged-in interface). Plain files from public/ are served from /assets/ledgerx/,
 # so no `bench build` is needed for CSS/JS edits - just hard-refresh the browser.

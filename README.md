@@ -79,9 +79,11 @@ no `bench build`.
 
 ## Known limits
 
-- The ERPNext tile on the apps screen keeps ERPNext's own name and logo, because it is declared
-  in `erpnext/hooks.py`. To rename it, edit `app_title` and the `logo` entries in your fork's
-  `erpnext/hooks.py` (a small, rarely-conflicting change).
+- ERPNext's name and logo in the desk (sidebar header, home-screen tile) are replaced by LedgerX's
+  through `ledgerx/boot.py`, without touching ERPNext. They are still declared in `erpnext/hooks.py`,
+  so places that read that file directly (the legacy `/apps` page, the setup wizard intro) keep the
+  ERPNext name until you rename it in your own fork, which is the step planned before release.
+- The "Framework" tile (Frappe's admin area) keeps its own name and generic icon.
 - The Cairo/Tajawal fonts are used only if installed on the device; otherwise Arabic falls back to
   Segoe UI / Tahoma. To guarantee the same font everywhere, self-host Cairo under `public/fonts/`.
 

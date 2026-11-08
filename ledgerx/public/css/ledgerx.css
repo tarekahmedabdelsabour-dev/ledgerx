@@ -135,8 +135,10 @@
 }
 
 /* ---------- Watermark: LedgerX logo + name in the page background ----------
- * A fixed, click-through layer. It sits above plain page backgrounds but below anything
- * positioned (navbar, dropdowns, modals), so it never blocks or covers interactive UI.
+ * A fixed, click-through layer. z-index 10 puts it above Frappe's white page containers (which
+ * are positioned and would otherwise hide a lower layer) but far below the navbar, dropdowns and
+ * modals (z-index >= 1000), so it never covers interactive UI. pointer-events:none keeps every
+ * click, hover and text selection working through it.
  * Strength is baked into the SVG tiles (public/images/ledgerx-watermark*.svg).
  * Turn it off: set  --lx-watermark-image: none;  in :root below.
  */
@@ -155,7 +157,7 @@ body::before {
 	content: "";
 	position: fixed;
 	inset: 0;
-	z-index: 0;
+	z-index: 10;
 	pointer-events: none;
 	background-image: var(--lx-watermark-image);
 	background-repeat: repeat;
