@@ -1,3 +1,5 @@
+from ledgerx import __version__ as app_version
+
 app_name = "ledgerx"
 app_title = "LedgerX"
 app_publisher = "LedgerX"
@@ -20,11 +22,15 @@ boot_session = "ledgerx.boot.extend_bootinfo"
 # Desk (the logged-in interface). Plain files from public/ are served from /assets/ledgerx/,
 # so no `bench build` is needed for CSS/JS edits - just hard-refresh the browser.
 # These load after Frappe's and ERPNext's own bundles, so they win on equal specificity.
-app_include_css = "/assets/ledgerx/css/ledgerx.css"
-app_include_js = "/assets/ledgerx/js/ledgerx.js"
+#
+# Frappe links plain (non-bundle) files without a version, so a browser may keep serving an old
+# copy after an update. The ?v= suffix is the app version: bump it in ledgerx/__init__.py with
+# every release and every browser fetches the new file on its own.
+app_include_css = f"/assets/ledgerx/css/ledgerx.css?v={app_version}"
+app_include_js = f"/assets/ledgerx/js/ledgerx.js?v={app_version}"
 
 # Website, login page, web forms and portal.
-web_include_css = "/assets/ledgerx/css/ledgerx_web.css"
+web_include_css = f"/assets/ledgerx/css/ledgerx_web.css?v={app_version}"
 
 # Branding on the login page / website. Later apps override earlier ones for the same key,
 # so these replace the values ERPNext declares in its own hooks.
