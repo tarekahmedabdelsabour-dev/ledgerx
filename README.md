@@ -10,6 +10,17 @@ sidebar, borders, dark mode), the login page, the website/portal header, the bro
 Arabic/RTL typography, and the branding records (Website Settings, Navbar Settings) which it
 re-applies after every `bench migrate`.
 
+## Watermark (logo + name)
+
+- **Pages (desk):** a faint, click-through LedgerX logo + name tiled in the background, light and
+  dark variants. It never blocks buttons or menus and is hidden when you print a desk page.
+  Turn it off by setting `--lx-watermark-image: none;` in `ledgerx/public/css/ledgerx.css`.
+- **Printouts and PDFs:** a Print Style called **LedgerX** (a copy of Frappe's default "Redesign" plus the
+  watermark) is created on install/migrate and activated if the site is still on the default style.
+  It covers the whole sheet on every page. To stop using it: *Print Settings → Print Style*.
+  A style you chose yourself is never overwritten.
+- Strength and spacing: `tools/make_watermark.py`, then `bench migrate`.
+
 ## New bench on the stable version (v16)
 
 Needs Python 3.14 and Node 24+ (the same tools Frappe 17 needs).
@@ -55,6 +66,8 @@ no `bench build`.
 | Names applied to settings records | `ledgerx/install.py` (`BRANDING`) |
 | Asset hooks, app name, apps-screen tile | `ledgerx/hooks.py` |
 | Arabic strings | `ledgerx/translations/ar.csv` |
+| Watermark strength / spacing | `tools/make_watermark.py` (regenerates the SVG tiles and `ledgerx_print.css`) |
+| Print watermark rules | `ledgerx/public/css/ledgerx_print.css` (applied by `install.py` on migrate) |
 
 ## Palette
 

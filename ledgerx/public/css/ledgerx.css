@@ -134,6 +134,41 @@
 	color: var(--lx-navy-950);
 }
 
+/* ---------- Watermark: LedgerX logo + name in the page background ----------
+ * A fixed, click-through layer. It sits above plain page backgrounds but below anything
+ * positioned (navbar, dropdowns, modals), so it never blocks or covers interactive UI.
+ * Strength is baked into the SVG tiles (public/images/ledgerx-watermark*.svg).
+ * Turn it off: set  --lx-watermark-image: none;  in :root below.
+ */
+:root,
+[data-theme="light"] {
+	--lx-watermark-image: url("/assets/ledgerx/images/ledgerx-watermark.svg");
+	--lx-watermark-size: 520px 340px;
+}
+
+[data-theme="dark"],
+.dark {
+	--lx-watermark-image: url("/assets/ledgerx/images/ledgerx-watermark-dark.svg");
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	background-image: var(--lx-watermark-image);
+	background-repeat: repeat;
+	background-size: var(--lx-watermark-size);
+}
+
+/* Printing a desk page directly: the print view has its own watermark (Print Style "LedgerX"). */
+@media print {
+	body::before {
+		display: none;
+	}
+}
+
 /* ---------- Scrollbars ---------- */
 * {
 	scrollbar-color: #b8cad3 transparent;
