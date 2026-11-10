@@ -50,3 +50,6 @@ has_permission = {
 	"Video": "ledgerx.permissions.deny",
 	"Video Settings": "ledgerx.permissions.deny",
 }
+
+# The CRM app (/crm) is a separate single-page app, so its branding is injected into its HTML response.
+after_request = ["ledgerx.crm_branding.after_request"]

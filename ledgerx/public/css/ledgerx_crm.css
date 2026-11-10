@@ -1,0 +1,27 @@
+/* LedgerX identity inside Frappe CRM (/crm). Loaded by ledgerx.crm_branding. CSS only: Vue-safe. */
+
+/* CRM mark (inline pink SVG) -> LedgerX mark */
+svg:has(> path[fill="#EF0BF5"]) {
+	background: url("/assets/ledgerx/images/ledgerx-mark.svg") center / contain no-repeat;
+}
+svg:has(> path[fill="#EF0BF5"]) > * {
+	display: none;
+}
+
+/* App switcher / any app logo image -> LedgerX mark */
+img[src*="/assets/crm/images/"],
+img[src*="/assets/erpnext/"],
+img[src*="/assets/hrms/"],
+img[src*="/assets/frappe/images/"],
+img[src*="/assets/helpdesk/"],
+img[src*="/assets/raven/"] {
+	content: url("/assets/ledgerx/images/ledgerx-mark.svg");
+}
+
+/* No links out to Frappe sites (docs, cloud, community) */
+a[href*="frappe.io"],
+a[href*="frappe.cloud"],
+a[href*="frappecloud.com"],
+a[href*="github.com/frappe"] {
+	display: none !important;
+}
