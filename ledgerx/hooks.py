@@ -43,3 +43,10 @@ website_context = {
 # once on install and again after every migrate, so the settings can never drift back.
 after_install = "ledgerx.install.after_install"
 after_migrate = "ledgerx.install.after_migrate"
+
+# No explanation videos anywhere: ERPNext's own Video doctypes are closed for every user.
+# (Onboarding video links are emptied in install.remove_videos; the player is switched off in ledgerx.js.)
+has_permission = {
+	"Video": "ledgerx.permissions.deny",
+	"Video Settings": "ledgerx.permissions.deny",
+}

@@ -105,3 +105,9 @@ html[dir="rtl"] .page-card-head {
 	max-width: 100%;
 	object-fit: contain;
 }
+
+/* ---------- No videos on website pages either ---------- */
+.section-video-wrapper,
+.section-video {
+	display: none !important;
+}

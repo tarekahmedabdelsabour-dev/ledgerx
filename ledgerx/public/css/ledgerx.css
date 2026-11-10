@@ -196,3 +196,11 @@ html[dir="rtl"] h2,
 html[dir="rtl"] h3 {
 	letter-spacing: 0;
 }
+
+/* ---------- No videos: hide any leftover video UI (onboarding thumbnails, help video links) ---------- */
+.onboarding-video,
+.help-video-link,
+[data-youtubeid],
+.help-links .video-link {
+	display: none !important;
+}

@@ -33,4 +33,31 @@
 	} else {
 		watchTitle();
 	}
+
+	// ---- No videos: the "Watch Video" help on list views and the YouTube player.
+	// Apps register help videos with `frappe.help.youtube_id["User"] = "..."` when a list view loads.
+	// Turning `youtube_id` into a store that forgets everything makes those assignments harmless.
+	function disableHelpVideos() {
+		if (!window.frappe || !frappe.help) return false;
+		try {
+			Object.defineProperty(frappe.help, "youtube_id", {
+				configurable: true,
+				get: function () {
+					return {};
+				},
+				set: function () {},
+			});
+		} catch (e) {
+			frappe.help.youtube_id = {};
+		}
+		frappe.help.show_video = function () {};
+		return true;
+	}
+
+	if (!disableHelpVideos()) {
+		var tries = 0;
+		var timer = setInterval(function () {
+			if (disableHelpVideos() || ++tries > 40) clearInterval(timer);
+		}, 250);
+	}
 })();

@@ -34,11 +34,13 @@ BASE_PRINT_STYLE = "Redesign"  # Frappe's default; LedgerX = a copy of it + the 
 def after_install():
 	apply_branding()
 	apply_print_style()
+	remove_videos()
 
 
 def after_migrate():
 	apply_branding()
 	apply_print_style()
+	remove_videos()
 
 
 def apply_branding():
@@ -92,5 +94,30 @@ def apply_print_style():
 	except Exception:
 		# Never block an install or a migrate because of a cosmetic feature.
 		frappe.log_error(title="LedgerX: could not apply the print watermark style")
+
+	frappe.clear_cache()
+
+
+VIDEO_COLUMNS = {"Onboarding Step": ("video_url", "intro_video_url")}
+
+
+def remove_videos():
+	"""No explanation videos anywhere: empty the video links that apps ship on their onboarding steps.
+
+	Standard onboarding steps come back from the app's files whenever an app update touches them, so
+	this runs on every migrate, not just once. The player itself, the list-view "Watch Video"
+	help and the Video doctype are switched off separately (ledgerx.js, ledgerx.permissions).
+	"""
+	try:
+		for doctype, fields in VIDEO_COLUMNS.items():
+			meta = frappe.get_meta(doctype)
+			for fieldname in fields:
+				if meta.has_field(fieldname):
+					frappe.db.sql(
+						f"update `tab{doctype}` set `{fieldname}` = '' where ifnull(`{fieldname}`, '') != ''"
+					)
+		frappe.db.commit()
+	except Exception:
+		frappe.log_error(title="LedgerX: could not remove onboarding videos")
 
 	frappe.clear_cache()
