@@ -24,6 +24,12 @@ BRANDING = {
 	"Navbar Settings": {
 		"app_logo": MARK,
 	},
+	# ERPNext writes its own name here on install ("Login to ERPNext", e-mail subjects...) and ships a
+	# "Sent via ERPNext" footer for every outgoing e-mail.
+	"System Settings": {
+		"app_name": "LedgerX",
+		"disable_standard_email_footer": 1,
+	},
 }
 
 

@@ -1,6 +1,3 @@
-LedgerX,ليدجر إكس
-Welcome to LedgerX,مرحباً بك في ليدجر إكس
-Powered by LedgerX,بواسطة ليدجر إكس
  (New), (جديد)
 (required),(مطلوب)
 "A deal is a sale you are working on. Create one, or convert a lead into a deal once it looks promising.",الصفقة هي عملية بيع تعمل عليها. أنشئ واحدة، أو حوّل عميلًا محتملًا إلى صفقة عندما يبدو واعدًا.
@@ -166,6 +163,9 @@ Drag a section or a field here to get started,اسحب قسمًا أو حقلً�
 "Drag and drop a CSV file, or",اسحب ملف CSV وأفلته، أو
 Duplicate View,تكرار العرض
 ERPNext,LedgerX
+ERPNext Integrations,تكاملات LedgerX
+ERPNext Settings,إعدادات LedgerX
+ERPNext User ID,معرّف المستخدم في LedgerX
 Easy,سهل
 Edit Call Log,تعديل سجل المكالمة
 Edit Data Fields Layout,تعديل تخطيط حقول البيانات
@@ -234,6 +234,7 @@ Filled: {0},تمت تعبئة: {0}
 First Name is mandatory,الاسم الأول إلزامي
 Frappe CRM mobile,تطبيق LedgerX CRM للموبايل
 From import,من الاستيراد
+Get to know ERPNext,تعرّف على LedgerX
 Getting started,البدء
 Go to Website,الذهاب إلى الموقع
 Greater than,أكبر من
@@ -278,10 +279,13 @@ Kanban settings,إعدادات كانبان
 Last Modified,آخر تعديل
 Lead field,حقل العميل المحتمل
 Lead field for {0},حقل العميل المحتمل لـ {0}
+LedgerX,ليدجر إكس
+LedgerX HR,الموارد البشرية
 Less than,أصغر من
 Less than or equal to,أصغر من أو يساوي
 Listen,استماع
 Log a Call,تسجيل مكالمة
+Login to ERPNext,تسجيل الدخول إلى LedgerX
 Login with Different Account,الدخول بحساب مختلف
 Lost Notes,ملاحظات الخسارة
 "Lost Notes are required when Lost Reason is ""Other""","ملاحظات الخسارة مطلوبة عندما يكون السبب ""أخرى"""
@@ -402,6 +406,7 @@ Please set a mobile number to make calls,من فضلك حدّد رقم موبا�
 Please set a website to visit,من فضلك حدّد موقعًا لزيارته
 Please set an email address to send emails,من فضلك حدّد عنوان بريد لإرسال الرسائل
 Please upload a CSV file.,من فضلك ارفع ملف CSV.
+Powered by LedgerX,بواسطة ليدجر إكس
 Primary Contact Set,تم تعيين جهة الاتصال الأساسية
 Public View,عرض عام
 Public Views,العروض العامة
@@ -561,7 +566,9 @@ View Contact,عرض جهة الاتصال
 View Location,عرض الموقع
 View Name,اسم العرض
 Welcome Message,رسالة الترحيب
+Welcome to ERPNext,أهلاً بك في LedgerX
 Welcome to Frappe CRM,مرحبًا بك في LedgerX CRM
+Welcome to LedgerX,مرحباً بك في ليدجر إكس
 Welcome to LedgerX CRM,مرحبًا بك في LedgerX CRM
 "Welcome {0}, lets add your first lead",أهلًا {0}، لنضف أول عميل محتمل لك
 WhatsApp Message,رسالة واتساب
@@ -573,6 +580,7 @@ You do not have enough permissions to access Frappe CRM. Please contact your adm
 You have no new notifications,ليس لديك إشعارات جديدة
 "You won't see this guided setup again. You can still connect email, import leads and invite your team from Settings.",لن ترى هذا الإعداد الإرشادي مرة أخرى. ما زال بإمكانك ربط البريد واستيراد العملاء المحتملين ودعوة فريقك من الإعدادات.
 You're all set,كل شيء جاهز
+[Important] [ERPNext] Auto Reorder Errors,[مهم] [LedgerX] أخطاء إعادة الطلب التلقائي
 added a,أضاف
 added a note,أضاف ملاحظة
 changes from,تغييرات من
@@ -603,4 +611,3 @@ unpinned the note,ألغى تثبيت الملاحظة
 "{0} leads imported, {1} rows failed.",تم استيراد {0} عميل محتمل، وفشل {1} صف.
 {0} leads imported.,تم استيراد {0} عميل محتمل.
 "{0} unsubscribed from emails for this record, so they won't receive this email.",ألغى {0} اشتراكه في رسائل هذا السجل، فلن يستلم هذه الرسالة.
-LedgerX HR,الموارد البشرية

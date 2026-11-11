@@ -3,7 +3,7 @@ from ledgerx import __version__ as app_version
 app_name = "ledgerx"
 app_title = "LedgerX"
 app_publisher = "LedgerX"
-app_description = "LedgerX - custom branding and interface layer for ERPNext"
+app_description = "LedgerX - branding and interface layer"
 app_email = "hello@ledgerx.local"
 app_license = "mit"
 app_icon = "fa fa-book"
@@ -52,4 +52,7 @@ has_permission = {
 }
 
 # The CRM app (/crm) is a separate single-page app, so its branding is injected into its HTML response.
-after_request = ["ledgerx.crm_branding.after_request"]
+after_request = [
+	"ledgerx.crm_branding.after_request",
+	"ledgerx.html_branding.after_request",
+]
