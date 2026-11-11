@@ -29,8 +29,39 @@
 		"Import": "استيراد",
 		"Documentation": "الوثائق",
 	};
-	var RTL = (document.documentElement.getAttribute("dir") || "").toLowerCase() === "rtl" ||
-		(document.documentElement.lang || "").indexOf("ar") === 0;
+	var RTL = false;
+
+	// Frappe CRM never flips its layout by itself, so the sidebar stays on the left for Arabic users.
+	// Find the user's language (own setting, then the site default) and switch the page direction.
+	function setRtl() {
+		RTL = true;
+		var h = document.documentElement;
+		h.setAttribute("dir", "rtl");
+		h.setAttribute("lang", "ar");
+		schedule();
+	}
+	function isArabic(l) { return typeof l === "string" && l.toLowerCase().indexOf("ar") === 0; }
+	function getJSON(url) {
+		return fetch(url, { credentials: "same-origin", headers: { Accept: "application/json" } })
+			.then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; });
+	}
+	function detectLanguage() {
+		var m = document.cookie.match(/(?:^|;\s*)user_id=([^;]*)/);
+		var user = m ? decodeURIComponent(m[1]) : "";
+		var q = "/api/method/frappe.client.get_value?doctype=User&fieldname=language&filters=" +
+			encodeURIComponent(JSON.stringify({ name: user }));
+		getJSON(q).then(function (j) {
+			var l = j.message && j.message.language;
+			if (l) return isArabic(l) && setRtl();
+			return getJSON("/api/method/frappe.client.get_single_value?doctype=System%20Settings&field=language")
+				.then(function (j2) {
+					if (isArabic(j2.message)) return setRtl();
+					// last resort: the page already shows Arabic text
+					var txt = (document.body && document.body.innerText) || "";
+					if ((txt.match(/[\u0600-\u06FF]/g) || []).length > 25) setRtl();
+				});
+		});
+	}
 
 	function arabic(text) {
 		var t = text.trim();
@@ -100,4 +131,5 @@
 		childList: true, subtree: true, characterData: true,
 	});
 	run();
+	detectLanguage();
 })();

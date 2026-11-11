@@ -52,3 +52,10 @@ body::before {
 @media print {
 	body::before { display: none; }
 }
+
+/* Arabic layout: mirror the few things that stay physical when the page direction is flipped */
+html[dir="rtl"] body { text-align: start; }
+html[dir="rtl"] input[type="email"],
+html[dir="rtl"] input[type="url"],
+html[dir="rtl"] input[type="tel"],
+html[dir="rtl"] input[type="number"] { direction: ltr; text-align: right; }
