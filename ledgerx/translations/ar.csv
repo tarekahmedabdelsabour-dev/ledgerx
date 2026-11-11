@@ -603,3 +603,4 @@ unpinned the note,ألغى تثبيت الملاحظة
 "{0} leads imported, {1} rows failed.",تم استيراد {0} عميل محتمل، وفشل {1} صف.
 {0} leads imported.,تم استيراد {0} عميل محتمل.
 "{0} unsubscribed from emails for this record, so they won't receive this email.",ألغى {0} اشتراكه في رسائل هذا السجل، فلن يستلم هذه الرسالة.
+LedgerX HR,الموارد البشرية

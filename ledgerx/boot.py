@@ -12,9 +12,10 @@ Nothing here lists apps one by one: any app installed later gets the LedgerX log
 BRAND = "LedgerX"
 MARK = "/assets/ledgerx/images/ledgerx-mark.svg"
 
-# Apps whose displayed *name* becomes the product name. ERPNext is the product the customer sees
-# as LedgerX; other apps (HRMS, Framework, ...) keep their own names so the tiles stay distinguishable.
-RENAMED_APPS = {"erpnext": BRAND}
+# Apps whose displayed *name* is replaced. ERPNext is the product the customer sees as LedgerX; HRMS
+# becomes "LedgerX HR" (shown as "الموارد البشرية" in Arabic, see translations/ar.csv). Other apps
+# (Framework, CRM, ...) keep their own names so the tiles stay distinguishable.
+RENAMED_APPS = {"erpnext": BRAND, "hrms": f"{BRAND} HR"}
 
 # Apps that keep their own logo. Empty = every app gets the LedgerX mark.
 # Example: KEEP_LOGO_APPS = ("frappe",) leaves the Framework tile with its generic icon.

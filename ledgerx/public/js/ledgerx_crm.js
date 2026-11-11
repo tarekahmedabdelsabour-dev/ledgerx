@@ -17,6 +17,7 @@
 		"Skip all": "تخطي الكل",
 		"Help centre": "مركز المساعدة",
 		"Call Logs": "سجل المكالمات",
+		"LedgerX HR": "الموارد البشرية",
 		"Deals": "الصفقات",
 		"Organizations": "المنظمات",
 		"Welcome to LedgerX CRM": "مرحبًا بك في LedgerX CRM",
