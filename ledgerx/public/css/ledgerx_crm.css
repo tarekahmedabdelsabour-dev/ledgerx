@@ -25,3 +25,30 @@ a[href*="frappecloud.com"],
 a[href*="github.com/frappe"] {
 	display: none !important;
 }
+
+/* Watermark (same tile as the desk): fixed, click-through layer above the white page, below modals/dropdowns. */
+:root {
+	--lx-watermark-image: url("/assets/ledgerx/images/ledgerx-watermark.svg");
+	--lx-watermark-size: 520px 340px;
+}
+@media (prefers-color-scheme: dark) {
+	:root[data-theme="dark"] {
+		--lx-watermark-image: url("/assets/ledgerx/images/ledgerx-watermark-dark.svg");
+	}
+}
+[data-theme="dark"] {
+	--lx-watermark-image: url("/assets/ledgerx/images/ledgerx-watermark-dark.svg");
+}
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	z-index: 10;
+	pointer-events: none;
+	background-image: var(--lx-watermark-image);
+	background-repeat: repeat;
+	background-size: var(--lx-watermark-size);
+}
+@media print {
+	body::before { display: none; }
+}

@@ -1,3 +1,605 @@
 LedgerX,ليدجر إكس
 Welcome to LedgerX,مرحباً بك في ليدجر إكس
 Powered by LedgerX,بواسطة ليدجر إكس
+ (New), (جديد)
+(required),(مطلوب)
+"A deal is a sale you are working on. Create one, or convert a lead into a deal once it looks promising.",الصفقة هي عملية بيع تعمل عليها. أنشئ واحدة، أو حوّل عميلًا محتملًا إلى صفقة عندما يبدو واعدًا.
+"A lead is someone who might buy from you. Add one yourself, import a list, or capture them from a web form.",العميل المحتمل هو شخص قد يشتري منك. أضف واحدًا بنفسك، أو استورد قائمة، أو التقطهم من نموذج ويب.
+API key,مفتاح API
+API secret,سر API
+Accept,قبول
+Accept Call,قبول المكالمة
+Access Denied,تم رفض الوصول
+Add Chart,إضافة مخطط
+Add Condition,إضافة شرط
+Add Condition Group,إضافة مجموعة شروط
+Add Existing User,إضافة مستخدم موجود
+Add Field,إضافة حقل
+Add Filter,إضافة فلتر
+Add Mobile Number...,إضافة رقم موبايل...
+Add Note,إضافة ملاحظة
+Add Organization...,إضافة منظمة...
+Add Sample Data,إضافة بيانات تجريبية
+Add Section,إضافة قسم
+Add Sort,إضافة ترتيب
+Add Tab,إضافة تبويب
+Add Task,إضافة مهمة
+Add a Task,إضافة مهمة
+Add a caption...,أضف تعليقًا...
+Add a mobile number to send WhatsApp messages.,أضف رقم موبايل لإرسال رسائل واتساب.
+Add a mobile number to send a template.,أضف رقم موبايل لإرسال قالب.
+Add a mobile number to start a WhatsApp conversation.,أضف رقم موبايل لبدء محادثة واتساب.
+Add description...,أضف وصفًا...
+Add existing system users to this CRM. Assign them a role to grant access with their current credentials.,أضف مستخدمي النظام الحاليين إلى هذا الـ CRM. حدّد لهم دورًا لمنحهم الوصول بنفس بيانات دخولهم.
+Add more,إضافة المزيد
+Add website to auto enrich,أضف الموقع الإلكتروني للإثراء التلقائي
+Add your first lead,أضف أول عميل محتمل
+Afternoon,بعد الظهر
+An Error Occurred,حدث خطأ
+An error occurred,حدث خطأ
+An error occurred while updating the document,حدث خطأ أثناء تحديث المستند
+And,و
+Annual Revenue should be a number,يجب أن تكون الإيرادات السنوية رقمًا
+Anything we could do better? (optional),هل هناك ما يمكننا تحسينه؟ (اختياري)
+App password,كلمة مرور التطبيق
+Are you sure you want to clear assignment for {0} item(s)?,هل أنت متأكد أنك تريد مسح التكليف لـ {0} عنصر؟
+Are you sure you want to clear demo data? This action cannot be undone.,هل أنت متأكد أنك تريد مسح البيانات التجريبية؟ لا يمكن التراجع عن هذا الإجراء.
+Are you sure you want to convert {0} lead(s) to deal(s)?,هل أنت متأكد أنك تريد تحويل {0} عميل محتمل إلى صفقات؟
+"Are you sure you want to delete ""{0}"" view?","هل أنت متأكد أنك تريد حذف العرض ""{0}""؟"
+Are you sure you want to delete this attachment?,هل أنت متأكد أنك تريد حذف هذا المرفق؟
+Are you sure you want to delete this contact?,هل أنت متأكد أنك تريد حذف جهة الاتصال هذه؟
+Are you sure you want to delete this organization?,هل أنت متأكد أنك تريد حذف هذه المنظمة؟
+Are you sure you want to delete this task?,هل أنت متأكد أنك تريد حذف هذه المهمة؟
+Are you sure you want to delete {0} - {1}?,هل أنت متأكد أنك تريد حذف {0} - {1}؟
+Are you sure you want to delete {0} items?,هل أنت متأكد أنك تريد حذف {0} عنصر؟
+Are you sure you want to delete {0} linked doc(s)?,هل أنت متأكد أنك تريد حذف {0} مستند مرتبط؟
+Are you sure you want to delete {0} linked item(s)?,هل أنت متأكد أنك تريد حذف {0} عنصر مرتبط؟
+Are you sure you want to make this attachment {0}?,هل أنت متأكد أنك تريد جعل هذا المرفق {0}؟
+Are you sure you want to remove this tab and all its content?,هل أنت متأكد أنك تريد إزالة هذا التبويب وكل محتوياته؟
+Are you sure you want to unlink {0} linked doc(s)?,هل أنت متأكد أنك تريد إلغاء ربط {0} مستند مرتبط؟
+Are you sure you want to unlink {0} linked item(s)?,هل أنت متأكد أنك تريد فصل {0} عنصر مرتبط؟
+Assign To Me,تكليفي أنا
+Assignment Cleared Successfully,تم مسح التكليف بنجاح
+At least one field is required,حقل واحد على الأقل مطلوب
+Attach a File,إرفاق ملف
+Attach file…,إرفاق ملف…
+Back to File Upload,العودة إلى رفع الملفات
+Be the first to add one.,كن أول من يضيف.
+"Before you dive in, tell us how setup went.",قبل أن تبدأ، أخبرنا كيف كان الإعداد.
+Bring in your leads,أحضر عملاءك المحتملين
+"Bulk operation is enqueued in background. Failures, if any, are recorded in Error Log.",وُضعت العملية الجماعية في الخلفية. أي إخفاقات تُسجّل في سجل الأخطاء.
+CRM Dashboard,لوحة معلومات العملاء
+Call Logs,سجل المكالمات
+"Call connected, but the call log could not be saved. Please contact your administrator.",تم الاتصال، لكن تعذر حفظ سجل المكالمة. من فضلك تواصل مع المسؤول.
+Call using {0},اتصال باستخدام {0}
+Calling Medium,وسيلة الاتصال
+Calling...,جارٍ الاتصال...
+"Calls made through Twilio or Exotel are logged here, along with calls you log by hand on a lead or deal.",تُسجَّل هنا المكالمات التي تُجرى عبر Twilio أو Exotel، مع المكالمات التي تسجّلها يدويًا على عميل محتمل أو صفقة.
+Cannot convert a lost lead to deal,لا يمكن تحويل عميل محتمل خاسر إلى صفقة
+Capturing Leads,جذب العملاء المحتملين
+Change WhatsApp recipient?,تغيير مستلم واتساب؟
+Choose Existing,اختيار موجود
+Choose Existing Contact,اختيار جهة اتصال موجودة
+Choose Existing Organization,اختيار منظمة موجودة
+Clear All Filters,مسح كل الفلاتر
+Clear Sort,مسح الترتيب
+Clear the filters to see all records.,امسح الفلاتر لعرض كل السجلات.
+Column Field,حقل العمود
+Column in file,العمود في الملف
+Confirm {0},تأكيد {0}
+Connect account,ربط الحساب
+Connect email,ربط البريد
+Connect your Email,اربط بريدك الإلكتروني
+Connect your email,اربط بريدك الإلكتروني
+Contact Added,تمت إضافة جهة الاتصال
+Contact Already Added,جهة الاتصال مضافة بالفعل
+Contact Image Updated,تم تحديث صورة جهة الاتصال
+Contact Removed,تمت إزالة جهة الاتصال
+Contact Support,التواصل مع الدعم
+Contact added to {0},تمت إضافة جهة الاتصال إلى {0}
+Contact image updated,تم تحديث صورة جهة الاتصال
+"Contacts are the people you talk to at your leads and customers. They are added when you convert a lead, or you can add them here.",جهات الاتصال هم الأشخاص الذين تتحدث معهم في عملائك المحتملين وعملائك. تُضاف عند تحويل عميل محتمل، ويمكنك إضافتها هنا.
+Contacts at {0},جهات الاتصال في {0}
+Continue,متابعة
+Convert,تحويل
+Convert lead to deal,حوّل العميل المحتمل إلى صفقة
+Convert to Deal,تحويل إلى صفقة
+Converted Successfully,تم التحويل بنجاح
+Copied to Clipboard,تم النسخ إلى الحافظة
+Copy link,نسخ الرابط
+Could not connect: check your credentials,تعذر الربط: تحقق من بيانات الدخول
+Could not create document,تعذر إنشاء المستند
+Could not load chart options,تعذر تحميل خيارات المخطط
+Could not load sample data,تعذر تحميل البيانات التجريبية
+Could not move the card. Reverting.,تعذر نقل البطاقة. جارٍ التراجع.
+Could not save your preference. Please try again.,تعذر حفظ تفضيلك. من فضلك حاول مرة أخرى.
+"Could not save, try again",تعذر الحفظ، حاول مرة أخرى
+Could not send invites,تعذر إرسال الدعوات
+Could not start enrichment.,تعذر بدء الإثراء.
+Could not undo enrichment.,تعذر التراجع عن الإثراء.
+Could not update document,تعذر تحديث المستند
+Could not upload the file.,تعذر رفع الملف.
+Create Deal,إنشاء صفقة
+Create View,إنشاء عرض
+Create a quotation from this deal to see it here.,أنشئ عرض سعر من هذه الصفقة ليظهر هنا.
+Create products as Items in ERPNext,إنشاء المنتجات كأصناف
+Create {0},إنشاء {0}
+Current Password,كلمة المرور الحالية
+Current icon,الأيقونة الحالية
+Custom Actions,إجراءات مخصصة
+Custom Branding,هوية مخصصة
+Custom Fields,حقول مخصصة
+Custom List Actions,إجراءات قوائم مخصصة
+Custom Range,نطاق مخصص
+Custom Statuses,حالات مخصصة
+Custom date & time…,تاريخ ووقت مخصص…
+Customer Created Successfully,تم إنشاء العميل بنجاح
+Data Imports,عمليات الاستيراد
+Deal,صفقة
+Deals,الصفقات
+Declined,مرفوضة
+Default calling medium set successfully to {0},تم تعيين وسيلة الاتصال الافتراضية إلى {0} بنجاح
+Delete Attachment,حذف المرفق
+Delete Contact,حذف جهة الاتصال
+Delete Linked Item,حذف العنصر المرتبط
+Delete Organization,حذف المنظمة
+Delete Task,حذف المهمة
+Delete View,حذف العرض
+Delete or unlink linked documents,احذف المستندات المرتبطة أو افصلها
+Delete or unlink these linked documents before deleting this document,احذف هذه المستندات المرتبطة أو افصلها قبل حذف هذا المستند
+Delete scheduled email?,حذف البريد المجدول؟
+Delete {0} Item(s),حذف {0} عنصر
+Delete {0} items,حذف {0} عنصر
+Deleting note...,جارٍ حذف الملاحظة...
+Descendants of (inclusive),فروع (شاملة)
+Device,الجهاز
+Difficult,صعب
+Dismiss reply,إلغاء الرد
+"Document ID, not the full name",معرّف المستند وليس الاسم الكامل
+Document Not Found,المستند غير موجود
+Document not found,المستند غير موجود
+Document updated successfully,تم تحديث المستند بنجاح
+Don't import,عدم الاستيراد
+Download CSV template,تنزيل قالب CSV
+Drag & Drop files here or upload from,اسحب الملفات وأفلتها هنا أو ارفعها من
+Drag a section or a field here to get started,اسحب قسمًا أو حقلًا إلى هنا للبدء
+"Drag and drop a CSV file, or",اسحب ملف CSV وأفلته، أو
+Duplicate View,تكرار العرض
+ERPNext,LedgerX
+Easy,سهل
+Edit Call Log,تعديل سجل المكالمة
+Edit Data Fields Layout,تعديل تخطيط حقول البيانات
+Edit Field Layout,تعديل تخطيط الحقول
+Edit Fields Layout,تعديل تخطيط الحقول
+Edit Grid Fields,تعديل حقول الجدول
+Edit Grid Fields Layout,تعديل تخطيط حقول الجدول
+Edit Grid Row Fields Layout,تعديل تخطيط حقول صف الجدول
+Edit Quick Entry Layout,تعديل تخطيط الإدخال السريع
+Edit Row,تعديل الصف
+Edit Task,تعديل مهمة
+Edit View,تعديل العرض
+Edit deal's mandatory fields layout,تعديل تخطيط الحقول الإلزامية للصفقة
+Editing Row {0},تعديل الصف {0}
+Email Communication,التواصل بالبريد
+Email From Lead,بريد من العميل المحتمل
+Email account connected,تم ربط حساب البريد
+Email address,عنوان البريد الإلكتروني
+Email already exists,البريد الإلكتروني موجود بالفعل
+Email provider,مزوّد البريد
+Email scheduled for {0},تمت جدولة البريد في {0}
+Email sent,تم إرسال البريد
+"Emails won't show on leads and deals, you can't reply from the CRM, and incoming mail won't create leads. Connect it later from Settings.",لن تظهر الرسائل على العملاء المحتملين والصفقات، ولن تستطيع الرد من النظام، ولن ينشئ البريد الوارد عملاء محتملين. يمكنك الربط لاحقًا من الإعدادات.
+Empty - Choose a field to filter by,فارغ - اختر حقلًا للتصفية
+Empty - Choose a field to sort by,فارغ - اختر حقلًا للترتيب
+Enrich,إثراء
+Enrich from website,إثراء من الموقع
+Enriched from website,مُثرى من الموقع
+Enriching…,جارٍ الإثراء…
+Enrichment failed.,فشل الإثراء.
+Enrichment successful,تم الإثراء بنجاح
+Enrichment undone,تم التراجع عن الإثراء
+Enrichment undone. Kept your edits to: {0},تم التراجع عن الإثراء. مع الإبقاء على تعديلاتك في: {0}
+Enter a valid email address,أدخل عنوان بريد صحيحًا
+Enter a valid phone number,أدخل رقم هاتف صحيحًا
+Enter {0},أدخل {0}
+Error Uploading File,خطأ في رفع الملف
+Error converting to deal: {0},خطأ في التحويل إلى صفقة: {0}
+Error creating lead: {0},خطأ في إنشاء العميل المحتمل: {0}
+Error occurred,حدث خطأ
+Evening,مساءً
+"Explore with sample leads, deals and tasks. Clear them anytime.",استكشف بعملاء محتملين وصفقات ومهام تجريبية. يمكنك مسحها في أي وقت.
+Export all {0} record(s),تصدير كل {0} سجل
+FROM,من
+Failed to Add Users,فشلت إضافة المستخدمين
+Failed to delete comment,فشل حذف التعليق
+Failed to delete note,فشل حذف الملاحظة
+Failed to delete scheduled email,فشل حذف البريد المجدول
+Failed to edit scheduled email,فشل تعديل البريد المجدول
+Failed to import,فشل الاستيراد
+Failed to load activities,فشل تحميل الأنشطة
+Failed to load fields layout,فشل تحميل تخطيط الحقول
+Failed to schedule email!,فشلت جدولة البريد!
+Failed to send comment!,فشل إرسال التعليق!
+Failed to send email,فشل إرسال البريد
+Failed to send email!,فشل إرسال البريد!
+Failed to send message,فشل إرسال الرسالة
+Failed to update comment,فشل تحديث التعليق
+Failed to update password,فشل تحديث كلمة المرور
+Failed to update {0} record(s): {1},فشل تحديث {0} سجل: {1}
+Fields Order,ترتيب الحقول
+"File ""{0}"" was skipped because only {1} uploads are allowed","تم تخطي الملف ""{0}"" لأن المسموح {1} ملفات فقط"
+"File ""{0}"" was skipped because only {1} uploads are allowed for DocType ""{2}""","تم تخطي الملف ""{0}"" لأن المسموح {1} ملفات فقط لنوع المستند ""{2}"""
+"File ""{0}"" was skipped because size exceeds {1} MB","تم تخطي الملف ""{0}"" لأن حجمه يتجاوز {1} ميجابايت"
+Filled: {0},تمت تعبئة: {0}
+First Name is mandatory,الاسم الأول إلزامي
+Frappe CRM mobile,تطبيق LedgerX CRM للموبايل
+From import,من الاستيراد
+Getting started,البدء
+Go to Website,الذهاب إلى الموقع
+Greater than,أكبر من
+Greater than or equal to,أكبر من أو يساوي
+Hang Up,إنهاء المكالمة
+Help centre,مركز المساعدة
+Hide Password,إخفاء كلمة المرور
+Hide Recording,إخفاء التسجيل
+Home Actions,إجراءات الرئيسية
+I'll add leads later,سأضيف العملاء المحتملين لاحقًا
+Import from CSV,استيراد من CSV
+Import leads from CSV,استيراد العملاء المحتملين من CSV
+Import steps,خطوات الاستيراد
+Import {0} leads,استيراد {0} عميل محتمل
+Importing leads...,جارٍ استيراد العملاء المحتملين...
+Importing {0},جارٍ استيراد {0}
+Importing {0} of {1} leads...,جارٍ استيراد {0} من {1} عميل محتمل...
+Imports you start from a list appear here.,تظهر هنا عمليات الاستيراد التي تبدأها من قائمة.
+In less than a minute,خلال أقل من دقيقة
+Inbound Call,مكالمة واردة
+Incoming call...,مكالمة واردة...
+Initiating call...,جارٍ بدء المكالمة...
+Insert Email Template,إدراج قالب بريد
+Insert Emoji,إدراج رمز تعبيري
+Integration,التكامل
+Invalid Email Address,عنوان بريد غير صالح
+Invalid Email or Password,بريد إلكتروني أو كلمة مرور غير صحيحة
+Invalid GeoJSON,GeoJSON غير صالح
+Invalid Website URL,رابط موقع غير صالح
+Invalid email address,عنوان بريد غير صالح
+"Invalid format. Try: 1 hour 30 minutes, 2 hours, 45 seconds, 1:30:45, 90s",صيغة غير صحيحة. جرّب: ساعة و30 دقيقة، ساعتان، 45 ثانية، 1:30:45، 90s
+"Invalid format. Try: 1h 30m 45s, 1:30:45, 90s",صيغة غير صحيحة. جرّب: 1h 30m 45s أو 1:30:45 أو 90s
+Invalid page or not permitted to access,صفحة غير صالحة أو لا تملك صلاحية الدخول
+Invite Users,دعوة مستخدمين
+Invite your team,ادعُ فريقك
+Invite your whole team.,ادعُ فريقك كله.
+It appears that there are currently no {0} available. You can create more {0} by using the Create button.,يبدو أنه لا توجد {0} حاليًا. يمكنك إنشاء المزيد من {0} بزر الإنشاء.
+It will be sent on {0}.,سيُرسل في {0}.
+It will be sent right away instead of on {0}.,سيُرسل فورًا بدلًا من {0}.
+It won't be sent. This can't be undone.,لن يُرسل. لا يمكن التراجع عن هذا.
+Kanban settings,إعدادات كانبان
+Last Modified,آخر تعديل
+Lead field,حقل العميل المحتمل
+Lead field for {0},حقل العميل المحتمل لـ {0}
+Less than,أصغر من
+Less than or equal to,أصغر من أو يساوي
+Listen,استماع
+Log a Call,تسجيل مكالمة
+Login with Different Account,الدخول بحساب مختلف
+Lost Notes,ملاحظات الخسارة
+"Lost Notes are required when Lost Reason is ""Other""","ملاحظات الخسارة مطلوبة عندما يكون السبب ""أخرى"""
+Lost Reason is required,سبب الخسارة مطلوب
+Make Call,إجراء مكالمة
+Make Private,جعله خاصًا
+Make Public,جعله عامًا
+Make a Call,إجراء مكالمة
+Make attachment {0},جعل المرفق {0}
+Make {0} as default calling medium,جعل {0} وسيلة الاتصال الافتراضية
+Mandatory field error: {0},خطأ في حقل إلزامي: {0}
+Mandatory fields required: {0},حقول إلزامية مطلوبة: {0}
+Map a column to First Name to continue.,اربط عمودًا بالاسم الأول للمتابعة.
+Map columns,ربط الأعمدة
+Match each column in your file to a lead field.,اربط كل عمود في ملفك بحقل في العميل المحتمل.
+Minimize,تصغير
+Missed Call,مكالمة فائتة
+Mobile App Installation,تثبيت تطبيق الموبايل
+Mobile number should be a number,يجب أن يكون رقم الموبايل رقمًا
+More Options,خيارات أخرى
+Morning,صباحًا
+Move Last Column to Next Section,نقل العمود الأخير إلى القسم التالي
+Move Last Column to Next Tab,نقل العمود الأخير إلى التبويب التالي
+Move Last Column to Previous Section,نقل العمود الأخير إلى القسم السابق
+Move Last Column to Previous Tab,نقل العمود الأخير إلى التبويب السابق
+Move cancelled: a lost reason is required for this status.,أُلغي النقل: سبب الخسارة مطلوب لهذه الحالة.
+Move to Next Tab,نقل إلى التبويب التالي
+Move to Previous Tab,نقل إلى التبويب السابق
+Moved to the composer. Schedule it again when ready.,تم نقله إلى المحرر. جدوله مرة أخرى عندما تكون جاهزًا.
+My Open Deals,صفقاتي المفتوحة
+Nested Conditions,الشروط المتداخلة
+New Comment,تعليق جديد
+New Deal,صفقة جديدة
+New Organization,منظمة جديدة
+New Section,قسم جديد
+New Tab,تبويب جديد
+New contact will be created based on the person's details,ستُنشأ جهة اتصال جديدة بناءً على بيانات الشخص
+New organization will be created based on the data in details section,ستُنشأ منظمة جديدة بناءً على البيانات في قسم التفاصيل
+New password cannot be the same as current password,لا يمكن أن تكون كلمة المرور الجديدة نفس الحالية
+No Activities Found,لا توجد أنشطة
+No Attachments Found,لا توجد مرفقات
+No Call History,لا يوجد سجل مكالمات
+No Comments Found,لا توجد تعليقات
+No Contacts Added,لم تُضف جهات اتصال
+No Data Fields Added Yet,لم تُضف أي حقول بيانات بعد
+No Details Added,لا توجد تفاصيل
+No Emails Found,لا توجد رسائل بريد
+No Mobile Number,لا يوجد رقم موبايل
+No Mobile Number Set,لم يُحدَّد رقم موبايل
+No New Notifications,لا إشعارات جديدة
+No Notes Found,لا توجد ملاحظات
+No Primary Contact Set,لم تُحدَّد جهة اتصال أساسية
+No Tasks Found,لا توجد مهام
+No Templates Found,لا توجد قوالب
+No Title,بدون عنوان
+No Users Found,لا يوجد مستخدمون
+No Website Found,لم يُعثر على موقع إلكتروني
+No WhatsApp Messages Found,لا توجد رسائل واتساب
+No WhatsApp templates yet,لا توجد قوالب واتساب بعد
+No call logs yet,لا توجد سجلات مكالمات بعد
+No contacts yet,لا توجد جهات اتصال بعد
+No data fields have been added yet.,لم تُضف أي حقول بيانات بعد.
+No deals yet,لا توجد صفقات بعد
+No emails found in your inbox. New messages will appear here soon.,لا توجد رسائل في بريدك. ستظهر الرسائل الجديدة هنا قريبًا.
+No files have been attached yet. Upload files to see them here.,لم تُرفق أي ملفات بعد. ارفع ملفات لتظهر هنا.
+No leads yet,لا يوجد عملاء محتملون بعد
+No matching templates,لا توجد قوالب مطابقة
+No notes yet,لا توجد ملاحظات بعد
+No organizations yet,لا توجد منظمات بعد
+No per-user pricing.,بدون تسعير لكل مستخدم.
+No priority,بدون أولوية
+No quotations yet,لا توجد عروض أسعار بعد
+No recent calls to display. Log a call or call someone now!,لا توجد مكالمات حديثة. سجّل مكالمة أو اتصل بشخص الآن!
+"No results for ""{0}""","لا نتائج لـ ""{0}"""
+No results found,لم يتم العثور على نتائج
+No tasks yet,لا توجد مهام بعد
+No {0} available,لا توجد {0}
+Normal,عادي
+Not equals,لا يساوي
+Not in,ليس ضمن
+Not like,لا يشبه
+Not now,ليس الآن
+Note deleted,تم حذف الملاحظة
+Notes View,عرض الملاحظات
+Notes keep what you learned on a call or in a meeting next to the lead or deal it belongs to.,تحفظ الملاحظات ما تعلمته في مكالمة أو اجتماع بجانب العميل المحتمل أو الصفقة التي تخصها.
+Nothing here for now. Add a note to keep track of things.,لا شيء هنا حاليًا. أضف ملاحظة لتتابع الأمور.
+Nothing to do at the moment. Start organizing by adding one here.,لا شيء للقيام به الآن. ابدأ بالتنظيم بإضافة مهمة هنا.
+"Nothing to undo, you've edited all enriched fields",لا شيء للتراجع عنه، لقد عدّلت كل الحقول المُثراة
+Only image files are allowed,يُسمح بملفات الصور فقط
+Open Nested Conditions,فتح الشروط المتداخلة
+Open Website,فتح الموقع
+Or create leads manually,أو أنشئ العملاء المحتملين يدويًا
+Organization Logo,شعار المنظمة
+Organizations,المنظمات
+Organizations are the companies your contacts and deals belong to.,المنظمات هي الشركات التي تنتمي إليها جهات اتصالك وصفقاتك.
+Other Features,مزايا أخرى
+Other contacts,جهات اتصال أخرى
+Outbound Call,مكالمة صادرة
+Password must be at least 8 characters,يجب ألا تقل كلمة المرور عن 8 أحرف
+"Password must contain lowercase, uppercase, number, and symbol",يجب أن تحتوي كلمة المرور على حرف صغير وحرف كبير ورقم ورمز
+Password updated successfully,تم تحديث كلمة المرور بنجاح
+Passwords match,كلمتا المرور متطابقتان
+Payment Reminder,تذكير بالدفع
+Pick a time in the future,اختر وقتًا في المستقبل
+Pick date & time,اختر التاريخ والوقت
+Pin View,تثبيت العرض
+Pin to top,تثبيت في الأعلى
+Pinned,مثبّت
+Pinned View,عرض مثبّت
+Pinned Views,العروض المثبّتة
+Pinned by {0} · {1},ثبّته {0} · {1}
+Playback Speed,سرعة التشغيل
+Please enter a valid URL,من فضلك أدخل رابطًا صحيحًا
+Please provide a reason for marking this {0} as lost,من فضلك اذكر سبب تصنيف هذا {0} كخاسر
+Please select an existing contact,من فضلك اختر جهة اتصال موجودة
+Please select an existing organization,من فضلك اختر منظمة موجودة
+Please set a mobile number to make calls,من فضلك حدّد رقم موبايل لإجراء المكالمات
+Please set a website to visit,من فضلك حدّد موقعًا لزيارته
+Please set an email address to send emails,من فضلك حدّد عنوان بريد لإرسال الرسائل
+Please upload a CSV file.,من فضلك ارفع ملف CSV.
+Primary Contact Set,تم تعيين جهة الاتصال الأساسية
+Public View,عرض عام
+Public Views,العروض العامة
+Pull replies into lead and deal timelines,سحب الردود إلى سجل العميل المحتمل والصفقة
+Quick Entry Layout,تخطيط الإدخال السريع
+Quick filters updated successfully,تم تحديث الفلاتر السريعة بنجاح
+Re-enrich this record?,إعادة إثراء هذا السجل؟
+React,تفاعل
+Reacted by,تفاعل من
+Receive email,استقبال البريد
+Recording not available,التسجيل غير متاح
+Reject,رفض
+Reject Call,رفض المكالمة
+Reload Columns,إعادة تحميل الأعمدة
+Remove All,إزالة الكل
+Remove Group,إزالة المجموعة
+Remove Image,إزالة الصورة
+Remove Last Column,إزالة العمود الأخير
+Remove Last Column (move fields to previous),إزالة العمود الأخير (ونقل الحقول إلى السابق)
+Remove Tab,إزالة التبويب
+Remove and move columns to {0} section,إزالة ونقل الأعمدة إلى قسم {0}
+Replace with an icon...,استبدال بأيقونة...
+Reply and send from the CRM,الرد والإرسال من النظام
+Replying to,رد على
+Required fields not mapped: {0}. Rows without them may fail.,حقول مطلوبة غير مربوطة: {0}. قد تفشل الصفوف الخالية منها.
+Reset to Default,إعادة للوضع الافتراضي
+Retake,إعادة الالتقاط
+Review,مراجعة
+Ringing...,يرن...
+Role for teammate {0},دور الزميل {0}
+SUBJECT,الموضوع
+Save Changes,حفظ التغييرات
+Save your changes before enriching,احفظ تغييراتك قبل الإثراء
+Save your changes before undoing,احفظ تغييراتك قبل التراجع
+Saved View,عرض محفوظ
+Saved Views,العروض المحفوظة
+Schedule,جدولة
+Schedule a follow-up task,جدولة مهمة متابعة
+Schedule a task...,جدولة مهمة...
+Schedule email?,جدولة البريد؟
+Schedule send,جدولة الإرسال
+Scheduled email actions,إجراءات البريد المجدول
+Scheduled email deleted,تم حذف البريد المجدول
+Scheduling email...,جارٍ جدولة البريد...
+Search by keyword,بحث بكلمة
+Search records or type a command...,ابحث في السجلات أو اكتب أمرًا...
+Select Country to see state options,اختر الدولة لعرض خيارات الولاية
+Select Range,اختيار نطاق
+Select a Value,اختر قيمة
+Select an Option,اختر خيارًا
+Select an icon...,اختر أيقونة...
+Select values,اختر قيمًا
+Send Template,إرسال قالب
+Send an Email,إرسال بريد
+"Send and receive email from the CRM, and keep every conversation on the right lead or deal.",أرسل واستقبل البريد من النظام، وابقِ كل محادثة على العميل المحتمل أو الصفقة الصحيحة.
+Send email,إرسال البريد
+Send feedback,إرسال الملاحظات
+Send invites,إرسال الدعوات
+Send now,إرسال الآن
+Send now?,إرسال الآن؟
+Send or discard the email you are writing first,أرسل أو تجاهل البريد الذي تكتبه أولًا
+Sending comment...,جارٍ إرسال التعليق...
+Sending email...,جارٍ إرسال البريد...
+Set As Default,تعيين كافتراضي
+Set First Name,تحديد الاسم الأول
+Set Location,تحديد الموقع
+Set all as private,جعل الكل خاصًا
+Set all as public,جعل الكل عامًا
+Set an Organization,تحديد منظمة
+Set as Primary Contact,تعيين كجهة اتصال أساسية
+Set location…,تحديد الموقع…
+Set status: {0},تعيين الحالة: {0}
+Set up Frappe CRM,إعداد LedgerX CRM
+Set up later,الإعداد لاحقًا
+Setting Up,الإعداد
+Setup rating,تقييم الإعداد
+Share usage data,مشاركة بيانات الاستخدام
+Share what was confusing or missing,شاركنا ما كان مربكًا أو ناقصًا
+Show Border,إظهار الحدود
+Show Label,إظهار العنوان
+Show Password,إظهار كلمة المرور
+Show all records,عرض كل السجلات
+"Since you added a new assignee, the {0} has been set to {1}.",بما أنك أضفت مكلّفًا جديدًا، تم تعيين {0} إلى {1}.
+"Since you removed {0} from the assignee, the {0} has also been removed.",بما أنك أزلت {0} من المكلّفين، تمت إزالة {0} أيضًا.
+"Since you removed {0} from the assignee, the {0} has been changed to the next available assignee {1}.",بما أنك أزلت {0} من المكلّفين، تم تغيير {0} إلى المكلّف المتاح التالي {1}.
+Skip all,تخطي الكل
+Skip anyway,تخطي على أي حال
+Skip email for now?,تخطي البريد الآن؟
+Skip for now,تخطي الآن
+Skip setup,تخطي الإعداد
+Skip setup?,تخطي الإعداد؟
+Sort,ترتيب
+Standard Views,العروض القياسية
+Start a conversation now!,ابدأ محادثة الآن!
+Start now,ابدأ الآن
+Start over,البدء من جديد
+Start with sample 10 leads,ابدأ بـ 10 عملاء محتملين تجريبيين
+"Start with the leads you already have, or explore the CRM with sample data first.",ابدأ بالعملاء المحتملين الموجودين لديك، أو جرّب النظام ببيانات تجريبية أولًا.
+Status is required,الحالة مطلوبة
+Step {0} of {1},الخطوة {0} من {1}
+Subject: {0},الموضوع: {0}
+Sync options,خيارات المزامنة
+"Sync your Contacts, Email and Calendars",زامن جهات اتصالك والبريد والتقويمات
+Table MultiSelect requires a Table with at least one Link field,يتطلب الاختيار المتعدد للجدول جدولًا فيه حقل ربط واحد على الأقل
+Take a note...,اكتب ملاحظة...
+"Tasks are to-dos for you and your team, like a follow-up call or sending a quote. Add them here or from a lead or deal.",المهام قوائم أعمال لك ولفريقك، مثل مكالمة متابعة أو إرسال عرض سعر. أضفها هنا أو من عميل محتمل أو صفقة.
+Teammate email {0},بريد الزميل {0}
+Templates are pre-approved messages you can send to start a conversation on WhatsApp.,القوالب رسائل معتمدة مسبقًا يمكنك إرسالها لبدء محادثة على واتساب.
+The CRM works best when your whole sales team is in it.,يعمل النظام بأفضل صورة عندما يكون كل فريق المبيعات فيه.
+The first row should contain column names.,يجب أن يحتوي الصف الأول على أسماء الأعمدة.
+The import did not go through. Fix the issues below and try again.,لم تكتمل عملية الاستيراد. أصلح المشاكل أدناه وحاول مرة أخرى.
+There are no activities to display here. Go ahead and make some changes.,لا توجد أنشطة لعرضها هنا. ابدأ بإجراء بعض التغييرات.
+These fields you edited will be replaced: {0},ستُستبدل هذه الحقول التي عدّلتها: {0}
+This column contains fields. Are you sure you want to remove it?,يحتوي هذا العمود على حقول. هل أنت متأكد أنك تريد إزالته؟
+This note is empty.,هذه الملاحظة فارغة.
+This record was already enriched. Enriching again may update those fields with newer values from the website.,تم إثراء هذا السجل من قبل. قد يحدّث الإثراء مرة أخرى هذه الحقول بقيم أحدث من الموقع.
+This restores the values these fields had before the last enrichment.,يعيد هذا القيم التي كانت في هذه الحقول قبل آخر إثراء.
+This section contains fields. Are you sure you want to remove it?,يحتوي هذا القسم على حقول. هل أنت متأكد أنك تريد إزالته؟
+This section is not editable,هذا القسم غير قابل للتعديل
+"This will delete selected items and items linked to it, are you sure?",سيؤدي هذا إلى حذف العناصر المحددة والعناصر المرتبطة بها، هل أنت متأكد؟
+"This will delete selected items and unlink linked items to it, are you sure?",سيؤدي هذا إلى حذف العناصر المحددة وفك ارتباط العناصر المرتبطة بها، هل أنت متأكد؟
+Toggle on for Preview,فعّل للمعاينة
+Try a different name or language.,جرّب اسمًا أو لغة مختلفة.
+Try with sample data,جرّب ببيانات تجريبية
+Turn into a Group,تحويل إلى مجموعة
+Type to search,اكتب للبحث
+Type your message here...,اكتب رسالتك هنا...
+Unable to run command,تعذر تنفيذ الأمر
+Unable to update assignment,تعذر تحديث التكليف
+Uncollapsible,غير قابل للطي
+Undo enrichment?,التراجع عن الإثراء؟
+Undo last enrichment,التراجع عن آخر إثراء
+Ungroup Conditions,فك تجميع الشروط
+Unlink,إلغاء الربط
+Unlink & Delete,إلغاء الربط والحذف
+Unlink & Delete {0} items,إلغاء الربط وحذف {0} عنصر
+Unlink All,فصل الكل
+Unlink Linked Item,فصل العنصر المرتبط
+Unlink {0} Item(s),فصل {0} عنصر
+Unpin,إلغاء التثبيت
+Unpin View,إلغاء تثبيت العرض
+Untitled,بدون عنوان
+Update {0} Records,تحديث {0} سجل
+Upload Attachment,رفع مرفق
+Upload Document,رفع مستند
+Upload Video,رفع فيديو
+Upload a spreadsheet of your existing leads.,ارفع جدول بياناتك الحالي للعملاء المحتملين.
+Uploading {0}%,جارٍ الرفع {0}%
+"Use ""{0}""","استخدام ""{0}"""
+Use New Deal to create a deal for this contact.,"استخدم ""صفقة جديدة"" لإنشاء صفقة لجهة الاتصال هذه."
+Use New Deal to create a deal for this organization.,"استخدم ""صفقة جديدة"" لإنشاء صفقة لهذه المنظمة."
+Use custom value,استخدام قيمة مخصصة
+Users Added Successfully,تمت إضافة المستخدمين بنجاح
+Valid till {0},صالح حتى {0}
+Value already exists,القيمة موجودة بالفعل
+View Contact,عرض جهة الاتصال
+View Location,عرض الموقع
+View Name,اسم العرض
+Welcome Message,رسالة الترحيب
+Welcome to Frappe CRM,مرحبًا بك في LedgerX CRM
+Welcome to LedgerX CRM,مرحبًا بك في LedgerX CRM
+"Welcome {0}, lets add your first lead",أهلًا {0}، لنضف أول عميل محتمل لك
+WhatsApp Message,رسالة واتساب
+WhatsApp Templates,قوالب واتساب
+Where,حيث
+"Width can be in number, pixel or rem (eg. 3, 30px, 10rem)",يمكن أن يكون العرض رقمًا أو بكسل أو rem (مثال: 3 أو 30px أو 10rem)
+You can change the default calling medium from the settings,يمكنك تغيير وسيلة الاتصال الافتراضية من الإعدادات
+You do not have enough permissions to access Frappe CRM. Please contact your administrator if you believe this is an error.,ليس لديك صلاحيات كافية للدخول إلى LedgerX CRM. من فضلك تواصل مع المسؤول إن كنت تعتقد أن هذا خطأ.
+You have no new notifications,ليس لديك إشعارات جديدة
+"You won't see this guided setup again. You can still connect email, import leads and invite your team from Settings.",لن ترى هذا الإعداد الإرشادي مرة أخرى. ما زال بإمكانك ربط البريد واستيراد العملاء المحتملين ودعوة فريقك من الإعدادات.
+You're all set,كل شيء جاهز
+added a,أضاف
+added a note,أضاف ملاحظة
+changes from,تغييرات من
+choose one from your device,اختر ملفًا من جهازك
+has made a call,أجرى مكالمة
+has reached out,تواصل معك
+here,هنا
+in 1 hour,خلال ساعة
+in 1 minute,خلال دقيقة
+in 1 year,خلال سنة
+in {0} days,خلال {0} أيام
+in {0} hours,خلال {0} ساعات
+in {0} minutes,خلال {0} دقائق
+in {0} months,خلال {0} أشهر
+in {0} weeks,خلال {0} أسابيع
+in {0} years,خلال {0} سنوات
+mentioned you in {0},أشار إليك في {0}
+note updates from,تحديثات الملاحظات من
+pinned the note,ثبّت الملاحظة
+unpinned the note,ألغى تثبيت الملاحظة
+{0} feature,{0} عنصر
+{0} features,{0} عناصر
+{0} is an Invalid Value,{0} قيمة غير صالحة
+{0} is an invalid email address,{0} عنوان بريد غير صالح
+{0} is away right now,{0} غير متواجد حاليًا
+{0} is unavailable right now,{0} غير متاح حاليًا
+{0} leads are ready to import. Here are the first few rows.,{0} عميل محتمل جاهز للاستيراد. هذه أول الصفوف.
+"{0} leads imported, {1} rows failed.",تم استيراد {0} عميل محتمل، وفشل {1} صف.
+{0} leads imported.,تم استيراد {0} عميل محتمل.
+"{0} unsubscribed from emails for this record, so they won't receive this email.",ألغى {0} اشتراكه في رسائل هذا السجل، فلن يستلم هذه الرسالة.

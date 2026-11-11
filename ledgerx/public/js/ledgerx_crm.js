@@ -10,10 +10,46 @@
 		[/Frappe/g, BRAND],
 	];
 
+	// Exact visible texts that do not go through the translation files (labels from shared UI code).
+	var DICT = {
+		"Getting started": "البدء",
+		"Start now": "ابدأ الآن",
+		"Skip all": "تخطي الكل",
+		"Help centre": "مركز المساعدة",
+		"Call Logs": "سجل المكالمات",
+		"Deals": "الصفقات",
+		"Organizations": "المنظمات",
+		"Welcome to LedgerX CRM": "مرحبًا بك في LedgerX CRM",
+		"Add your first lead": "أضف أول عميل محتمل",
+		"Connect your email": "اربط بريدك الإلكتروني",
+		"Invite your team": "ادعُ فريقك",
+		"Convert lead to deal": "حوّل العميل المحتمل إلى صفقة",
+		"Schedule a follow-up task": "جدولة مهمة متابعة",
+		"No leads yet": "لا يوجد عملاء محتملون بعد",
+		"Import": "استيراد",
+		"Documentation": "الوثائق",
+	};
+	var RTL = (document.documentElement.getAttribute("dir") || "").toLowerCase() === "rtl" ||
+		(document.documentElement.lang || "").indexOf("ar") === 0;
+
+	function arabic(text) {
+		var t = text.trim();
+		if (!t) return text;
+		var m = /^(\d+)\/(\d+) steps completed$/.exec(t);
+		if (m) return text.replace(t, "تم إنجاز " + m[1] + " من " + m[2] + " خطوات");
+		m = /^(\d+)% completed$/.exec(t);
+		if (m) return text.replace(t, "اكتمل " + m[1] + "%");
+		if (Object.prototype.hasOwnProperty.call(DICT, t)) return text.replace(t, DICT[t]);
+		return text;
+	}
+
 	function fix(text) {
-		if (!text || text.indexOf("©") !== -1 || /Technologies|contributors/.test(text)) return text;
+		if (!text) return text;
 		var out = text;
-		for (var i = 0; i < RULES.length; i++) out = out.replace(RULES[i][0], RULES[i][1]);
+		if (out.indexOf("©") === -1 && !/Technologies|contributors/.test(out)) {
+			for (var i = 0; i < RULES.length; i++) out = out.replace(RULES[i][0], RULES[i][1]);
+			if (RTL && /[A-Za-z]/.test(out)) out = arabic(out);
+		}
 		return out;
 	}
 
