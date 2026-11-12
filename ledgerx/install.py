@@ -44,9 +44,19 @@ def after_install():
 
 
 def after_migrate():
+	apply_translation_overrides()
 	apply_branding()
 	apply_print_style()
 	remove_videos()
+
+
+def apply_translation_overrides():
+	try:
+		from ledgerx.translation_overrides import apply
+
+		apply()
+	except Exception:
+		frappe.log_error(title="LedgerX: translation overrides")
 
 
 def apply_branding():
