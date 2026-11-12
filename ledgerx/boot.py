@@ -13,9 +13,9 @@ BRAND = "LedgerX"
 MARK = "/assets/ledgerx/images/ledgerx-mark.svg"
 
 # Apps whose displayed *name* is replaced. ERPNext is the product the customer sees as LedgerX; HRMS
-# becomes "LedgerX HR" (shown as "الموارد البشرية" in Arabic, see translations/ar.csv). Other apps
+# becomes "LedgerX HR" (shown as "الموارد البشرية" in Arabic) and Lending "LedgerX Lending" ("الإقراض والتمويل"), see translations/ar.csv. Other apps
 # (Framework, CRM, ...) keep their own names so the tiles stay distinguishable.
-RENAMED_APPS = {"erpnext": BRAND, "hrms": f"{BRAND} HR"}
+RENAMED_APPS = {"erpnext": BRAND, "hrms": f"{BRAND} HR", "lending": f"{BRAND} Lending"}
 
 # Apps that keep their own logo. Empty = every app gets the LedgerX mark.
 # Example: KEEP_LOGO_APPS = ("frappe",) leaves the Framework tile with its generic icon.
