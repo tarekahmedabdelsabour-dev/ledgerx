@@ -27,7 +27,10 @@ boot_session = "ledgerx.boot.extend_bootinfo"
 # copy after an update. The ?v= suffix is the app version: bump it in ledgerx/__init__.py with
 # every release and every browser fetches the new file on its own.
 app_include_css = f"/assets/ledgerx/css/ledgerx.css?v={app_version}"
-app_include_js = f"/assets/ledgerx/js/ledgerx.js?v={app_version}"
+app_include_js = [
+	f"/assets/ledgerx/js/ledgerx.js?v={app_version}",
+	f"/assets/ledgerx/js/ledgerx_excel.js?v={app_version}",
+]
 
 # Website, login page, web forms and portal.
 web_include_css = f"/assets/ledgerx/css/ledgerx_web.css?v={app_version}"

@@ -23,6 +23,13 @@ KEEP_LOGO_APPS = ()
 
 
 def extend_bootinfo(bootinfo):
+	try:
+		from ledgerx import excel_compat
+
+		excel_compat.patch()  # catches modules imported after start-up
+	except Exception:
+		pass
+
 	for app in bootinfo.get("app_data") or []:
 		name = app.get("app_name")
 

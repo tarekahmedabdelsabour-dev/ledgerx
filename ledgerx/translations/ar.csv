@@ -264,7 +264,9 @@ Invalid Email Address,عنوان بريد غير صالح
 Invalid Email or Password,بريد إلكتروني أو كلمة مرور غير صحيحة
 Invalid GeoJSON,GeoJSON غير صالح
 Invalid Website URL,رابط موقع غير صالح
+Invalid data,بيانات غير صالحة
 Invalid email address,عنوان بريد غير صالح
+Invalid file,ملف غير صالح
 "Invalid format. Try: 1 hour 30 minutes, 2 hours, 45 seconds, 1:30:45, 90s",صيغة غير صحيحة. جرّب: ساعة و30 دقيقة، ساعتان، 45 ثانية، 1:30:45، 90s
 "Invalid format. Try: 1h 30m 45s, 1:30:45, 90s",صيغة غير صحيحة. جرّب: 1h 30m 45s أو 1:30:45 أو 90s
 Invalid page or not permitted to access,صفحة غير صالحة أو لا تملك صلاحية الدخول
@@ -400,6 +402,7 @@ Pinned View,عرض مثبّت
 Pinned Views,العروض المثبّتة
 Pinned by {0} · {1},ثبّته {0} · {1}
 Playback Speed,سرعة التشغيل
+Please choose an Excel (.xlsx) file,يرجى اختيار ملف إكسل (.xlsx)
 Please enter a valid URL,من فضلك أدخل رابطًا صحيحًا
 Please provide a reason for marking this {0} as lost,من فضلك اذكر سبب تصنيف هذا {0} كخاسر
 Please select an existing contact,من فضلك اختر جهة اتصال موجودة
@@ -418,6 +421,7 @@ Quick filters updated successfully,تم تحديث الفلاتر السريعة
 Re-enrich this record?,إعادة إثراء هذا السجل؟
 React,تفاعل
 Reacted by,تفاعل من
+Reading the Excel file...,جاري قراءة ملف الإكسل...
 Receive email,استقبال البريد
 Recording not available,التسجيل غير متاح
 Reject,رفض
@@ -518,6 +522,7 @@ Take a note...,اكتب ملاحظة...
 Teammate email {0},بريد الزميل {0}
 Templates are pre-approved messages you can send to start a conversation on WhatsApp.,القوالب رسائل معتمدة مسبقًا يمكنك إرسالها لبدء محادثة على واتساب.
 The CRM works best when your whole sales team is in it.,يعمل النظام بأفضل صورة عندما يكون كل فريق المبيعات فيه.
+The file is too large,الملف كبير جداً
 The first row should contain column names.,يجب أن يحتوي الصف الأول على أسماء الأعمدة.
 The import did not go through. Fix the issues below and try again.,لم تكتمل عملية الاستيراد. أصلح المشاكل أدناه وحاول مرة أخرى.
 There are no activities to display here. Go ahead and make some changes.,لا توجد أنشطة لعرضها هنا. ابدأ بإجراء بعض التغييرات.
@@ -531,6 +536,7 @@ This section is not editable,هذا القسم غير قابل للتعديل
 "This will delete selected items and items linked to it, are you sure?",سيؤدي هذا إلى حذف العناصر المحددة والعناصر المرتبطة بها، هل أنت متأكد؟
 "This will delete selected items and unlink linked items to it, are you sure?",سيؤدي هذا إلى حذف العناصر المحددة وفك ارتباط العناصر المرتبطة بها، هل أنت متأكد؟
 Toggle on for Preview,فعّل للمعاينة
+Too many rows,عدد الصفوف كبير جداً
 Try a different name or language.,جرّب اسمًا أو لغة مختلفة.
 Try with sample data,جرّب ببيانات تجريبية
 Turn into a Group,تحويل إلى مجموعة
