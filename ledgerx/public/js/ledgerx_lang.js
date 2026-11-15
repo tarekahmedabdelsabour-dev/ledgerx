@@ -48,33 +48,14 @@
 	function mount() {
 		if (!document.body || document.getElementById("lx-lang-switch")) return;
 		var btn = build();
-		// inside the desk top bar when there is one, otherwise a small tab hanging from the top edge
-		var nav = document.querySelector("header.navbar .navbar-nav, .navbar .navbar-right, .navbar .navbar-nav");
-		if (nav && nav.tagName === "UL") {
-			var li = document.createElement("li");
-			li.className = "nav-item lx-lang-item";
-			li.appendChild(btn);
-			nav.insertBefore(li, nav.firstChild);
-			btn.className = "lx-lang-in-nav";
-		} else {
-			btn.className = "lx-lang-floating";
-			document.body.appendChild(btn);
-		}
+		btn.className = "lx-lang-floating";
+		document.body.appendChild(btn);
 	}
 
 	function start() {
 		mount();
-		// the desk builds its top bar after load: try again a few times, then stay quiet
-		var tries = 0;
-		var t = setInterval(function () {
-			tries++;
-			var b = document.getElementById("lx-lang-switch");
-			if (!b || (b.className === "lx-lang-floating" && document.querySelector("header.navbar .navbar-nav"))) {
-				if (b && b.parentNode) b.parentNode.removeChild(b);
-				mount();
-			}
-			if (tries > 20) clearInterval(t);
-		}, 500);
+		// keep it alive: the desk re-renders its page, so put the button back if it ever disappears
+		setInterval(mount, 1500);
 	}
 
 	if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
