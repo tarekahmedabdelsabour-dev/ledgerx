@@ -43,9 +43,25 @@
 		return u === "Guest";
 	}
 
+	// Same effect as Ctrl+Shift+R: drop the browser's cached copies, re-fetch this page uncached, then reload.
 	function done(lang) {
 		document.cookie = "preferred_language=" + lang + "; path=/; max-age=31536000; SameSite=Lax";
-		window.location.reload();
+		var jobs = [];
+		try { if (window.caches) jobs.push(caches.keys().then(function (k) { return Promise.all(k.map(function (n) { return caches.delete(n); })); })); } catch (e) {}
+		try {
+			if (navigator.serviceWorker) jobs.push(navigator.serviceWorker.getRegistrations().then(function (r) { return Promise.all(r.map(function (x) { return x.unregister(); })); }));
+		} catch (e) {}
+		try {
+			if (window.indexedDB && indexedDB.databases) jobs.push(indexedDB.databases().then(function (d) { d.forEach(function (x) { if (x.name) indexedDB.deleteDatabase(x.name); }); }));
+		} catch (e) {}
+		try {
+			["__messages", "translations", "frappe.boot", "boot"].forEach(function (k) { localStorage.removeItem(k); });
+			Object.keys(localStorage).forEach(function (k) { if (/translat|messages|boot/i.test(k)) localStorage.removeItem(k); });
+		} catch (e) {}
+		try { jobs.push(fetch(location.href, { cache: "reload", credentials: "same-origin" })); } catch (e) {}
+		var go = function () { window.location.reload(); };
+		Promise.all(jobs.map(function (p) { return p.catch(function () {}); })).then(go, go);
+		setTimeout(go, 2500);
 	}
 
 	function post(lang, token) {

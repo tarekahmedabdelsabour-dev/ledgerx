@@ -71,3 +71,13 @@ img[src*="/assets/payment_network/"]{content:url("/assets/ledgerx/images/apps/pa
 /* Roster header logo (an inline SVG) */
 a[href*="hr-setup"] > svg{background:url("/assets/ledgerx/images/apps/hr.svg") center / contain no-repeat;border-radius:6px}
 a[href*="hr-setup"] > svg > *{display:none}
+
+/* Names show in full (wrap) instead of ending with "..." */
+nav .truncate, aside .truncate, [class*="sidebar"] .truncate, [class*="Sidebar"] .truncate,
+[role="menu"] .truncate, [role="menuitem"] .truncate, [class*="dropdown"] .truncate {
+	white-space: normal !important;
+	overflow: visible !important;
+	text-overflow: clip !important;
+	word-break: break-word;
+	line-height: 1.3;
+}

@@ -205,3 +205,16 @@ html[dir="rtl"] h3 {
 	display: none !important;
 }
 
+
+/* Module and menu names show in full (wrap) instead of ending with "..." */
+.sidebar-item-label, .sidebar-item .item-title, .standard-sidebar-item .item-title, .standard-sidebar-label,
+.desktop-icon .icon-title, .desktop-icon .icon-label, .app-title, .sidebar-subtitle, .dock-label, .module-title,
+.sidebar-header .app-title, .sidebar-header .app-subtitle,
+.layout-side-section .truncate, .body-sidebar .truncate, .body-sidebar .ellipsis, [class*="sidebar"] .truncate, [class*="sidebar"] .ellipsis,
+.desktop-container .truncate, [class*="desktop"] .truncate, [class*="dock"] .truncate {
+	white-space: normal !important;
+	overflow: visible !important;
+	text-overflow: clip !important;
+	word-break: break-word;
+	line-height: 1.3;
+}

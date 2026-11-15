@@ -9,6 +9,7 @@ def set_language(lang):
 	if frappe.session.user == "Guest":
 		return lang
 	frappe.db.set_value("User", frappe.session.user, "language", lang)
+	frappe.clear_document_cache("User", frappe.session.user)
 	frappe.db.commit()
 	frappe.local.cookie_manager.set_cookie("preferred_language", lang)
 	return lang
