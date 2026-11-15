@@ -22,7 +22,7 @@ BRAND = "LedgerX"
 
 # "ERPNext", "ERP Next" - exact capitalisation of the product name only, never "erpnext" (module and
 # route identifiers) so nothing technical is renamed by accident.
-NAME = re.compile(r"\bERP ?Next\b")
+NAME = re.compile(r"\b(?:ERP ?Next|Frappe)\b")
 
 TOKEN = re.compile(r"(<script\b.*?</script\s*>|<style\b.*?</style\s*>|<!--.*?-->|<[^>]*>)", re.S | re.I)
 ATTR = re.compile(r'(\b(?:title|alt|placeholder|aria-label|data-original-title|content)\s*=\s*")([^"]*)(")', re.I)
@@ -37,7 +37,7 @@ def rebrand_text(text):
 
 def rebrand_html(html):
 	"""Return `html` (str) with the product name replaced in visible text only."""
-	if "ERP" not in html:
+	if "ERP" not in html and "Frappe" not in html:
 		return html
 	out = []
 	for tok in TOKEN.split(html):
@@ -47,7 +47,7 @@ def rebrand_html(html):
 			low = tok[:8].lower()
 			if low.startswith(("<script", "<style", "<!--")):
 				out.append(tok)
-			elif "ERP" in tok:
+			elif "ERP" in tok or "Frappe" in tok:
 				out.append(ATTR.sub(lambda m: m.group(1) + rebrand_text(m.group(2)) + m.group(3), tok))
 			else:
 				out.append(tok)
@@ -71,7 +71,7 @@ def after_request(response=None, request=None):
 		if getattr(response, "direct_passthrough", False) or response.status_code != 200:
 			return
 		data = response.get_data()
-		if len(data) > MAX_BYTES or b"ERP" not in data:
+		if len(data) > MAX_BYTES or b"ERP" not in data and b"Frappe" not in data:
 			return
 		new = rebrand_html(data.decode("utf-8")).encode("utf-8")
 		if new != data:

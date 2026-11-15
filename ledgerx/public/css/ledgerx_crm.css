@@ -61,5 +61,5 @@ html[dir="rtl"] input[type="tel"],
 html[dir="rtl"] input[type="number"] { direction: ltr; text-align: right; }
 
 /* Language switch */
-#lx-lang-switch{font:600 11px/1 system-ui,sans-serif;cursor:pointer;border:1px solid #d1d8dd;background:#fff;color:#333;border-radius:0 0 10px 10px;padding:4px 10px;position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:60}
+#lx-lang-switch{font:600 11px/1 system-ui,sans-serif;cursor:pointer;border:1px solid #d1d8dd;background:#fff;color:#333;border-radius:0 0 10px 10px;padding:4px 10px;position:fixed;top:0;left:8px;z-index:60}
 #lx-lang-switch:hover{background:#f3f3f3}

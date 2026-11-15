@@ -1,4 +1,4 @@
-"""LedgerX identity inside the CRM app (served at /crm).
+"""LedgerX identity inside the standalone Vue apps: CRM (/crm), HR roster (/hr) and HR mobile (/hrms).
 
 Frappe CRM is a standalone single-page app: it does not load the desk bundles, so the desk branding
 (ledgerx.js / ledgerx.css) never reaches it. Instead, every HTML response for /crm gets three things
@@ -25,7 +25,8 @@ SW_OFF = (
 
 def is_crm_path(path):
 	path = (path or "").rstrip("/")
-	return path == "/crm" or path.startswith("/crm/")
+	# Frappe CRM (/crm), the HR roster (/hr/...) and the HR mobile app (/hrms/...) are all standalone Vue apps
+	return any(path == r or path.startswith(r + "/") for r in ("/crm", "/hr", "/hrms"))
 
 
 def inject(html):

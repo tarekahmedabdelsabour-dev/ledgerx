@@ -208,5 +208,5 @@ html[dir="rtl"] h3 {
 /* Language switch (ledgerx_lang.js) */
 #lx-lang-switch{font:600 11px/1 var(--font-stack, system-ui, sans-serif);letter-spacing:.02em;cursor:pointer;border:1px solid var(--border-color,#d1d8dd);background:var(--card-bg,#fff);color:var(--text-color,#333);border-radius:999px;padding:4px 9px;margin:0 6px}
 #lx-lang-switch:hover{background:var(--control-bg,#f3f3f3)}
-.lx-lang-floating{position:fixed!important;top:0;left:50%;transform:translateX(-50%);z-index:100000;margin:0!important;border-top-left-radius:0!important;border-top-right-radius:0!important}
+.lx-lang-floating{position:fixed!important;top:0;left:8px;z-index:100000;margin:0!important;border-top-left-radius:0!important;border-top-right-radius:0!important}
 .lx-lang-item{display:flex;align-items:center;list-style:none}

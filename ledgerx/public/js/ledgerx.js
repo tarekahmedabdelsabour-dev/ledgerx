@@ -71,8 +71,8 @@
 	"use strict";
 
 	var BRAND = "LedgerX";
-	var NAME = /\bERP ?Next\b/g;
-	var TEST = /ERP ?Next/;
+	var NAME = /\b(?:ERP ?Next|Frappe)\b/g;
+	var TEST = /ERP ?Next|Frappe/;
 	var ATTRS = ["title", "placeholder", "aria-label", "data-original-title", "alt"];
 	var SKIP = /^(SCRIPT|STYLE|TEXTAREA|INPUT|PRE|CODE|NOSCRIPT)$/;
 	var SKIP_SELECTOR = ".ql-editor, .CodeMirror, .ace_editor, [contenteditable='true'], .frappe-control[data-fieldtype='Code']";
