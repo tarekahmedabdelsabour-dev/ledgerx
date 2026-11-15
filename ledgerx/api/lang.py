@@ -12,3 +12,9 @@ def set_language(lang):
 	frappe.db.commit()
 	frappe.local.cookie_manager.set_cookie("preferred_language", lang)
 	return lang
+
+
+@frappe.whitelist()
+def csrf():
+	"""CSRF token for the standalone screens (CRM / HR) that do not expose it to our script."""
+	return frappe.sessions.get_csrf_token()

@@ -139,34 +139,11 @@
 		return _open.apply(window, arguments);
 	};
 
-	// ---- Small Arabic / English switch, top edge of the screen ----
-	function addSwitch() {
-		if (document.getElementById("lx-lang-switch") || !document.body) return;
-		var target = RTL ? "en" : "ar";
-		var b = document.createElement("button");
-		b.id = "lx-lang-switch"; b.type = "button"; b.className = "lx-lang-floating";
-		b.textContent = target === "en" ? "EN" : "عربي";
-		b.title = target === "en" ? "Switch to English" : "التبديل إلى العربية";
-		b.addEventListener("click", function () {
-			var tok = window.csrf_token || (window.frappe && window.frappe.csrf_token) || "";
-			fetch("/api/method/ledgerx.api.lang.set_language", {
-				method: "POST", credentials: "same-origin",
-				headers: { "Content-Type": "application/json", "X-Frappe-CSRF-Token": tok, Accept: "application/json" },
-				body: JSON.stringify({ lang: target }),
-			}).then(function () {
-				document.cookie = "preferred_language=" + target + "; path=/; max-age=31536000; SameSite=Lax";
-				location.reload();
-			});
-		});
-		document.body.appendChild(b);
-	}
-
 	var queued = false;
 	function run() {
 		queued = false;
 		fixHead();
 		if (document.body) { walk(document.body); hideHelp(document.body); }
-		setTimeout(addSwitch, 400);
 	}
 	function schedule() {
 		if (!queued) {

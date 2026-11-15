@@ -21,6 +21,12 @@ RENAMED_APPS = {"erpnext": BRAND, "hrms": f"{BRAND} HR", "lending": f"{BRAND} Le
 # Example: KEEP_LOGO_APPS = ("frappe",) leaves the Framework tile with its generic icon.
 KEEP_LOGO_APPS = ()
 
+# Every module gets the LedgerX tile with its own glyph (public/images/apps/<file>); any other app gets the plain mark.
+APP_ICONS = {
+	"erpnext": "accounting", "crm": "crm", "hrms": "hr", "lending": "lending",
+	"ledgerx_fleet": "fleet", "ledgerx_sales": "sales", "payment_network": "payments",
+}
+
 
 def extend_bootinfo(bootinfo):
 	try:
@@ -37,4 +43,5 @@ def extend_bootinfo(bootinfo):
 			app["app_title"] = RENAMED_APPS[name]
 
 		if name not in KEEP_LOGO_APPS:
-			app["app_logo_url"] = MARK
+			icon = APP_ICONS.get(name)
+			app["app_logo_url"] = f"/assets/ledgerx/images/apps/{icon}.svg" if icon else MARK

@@ -60,6 +60,14 @@ html[dir="rtl"] input[type="url"],
 html[dir="rtl"] input[type="tel"],
 html[dir="rtl"] input[type="number"] { direction: ltr; text-align: right; }
 
-/* Language switch */
-#lx-lang-switch{font:600 11px/1 system-ui,sans-serif;cursor:pointer;border:1px solid #d1d8dd;background:#fff;color:#333;border-radius:0 0 10px 10px;padding:4px 10px;position:fixed;top:0;left:8px;z-index:60}
-#lx-lang-switch:hover{background:#f3f3f3}
+/* One LedgerX tile per module: same background, a glyph that says which module it is */
+img[src*="/assets/erpnext/"]{content:url("/assets/ledgerx/images/apps/accounting.svg")}
+img[src*="/assets/crm/"]{content:url("/assets/ledgerx/images/apps/crm.svg")}
+img[src*="/assets/hrms/"]{content:url("/assets/ledgerx/images/apps/hr.svg")}
+img[src*="/assets/lending/"]{content:url("/assets/ledgerx/images/apps/lending.svg")}
+img[src*="/assets/ledgerx_fleet/"]{content:url("/assets/ledgerx/images/apps/fleet.svg")}
+img[src*="/assets/ledgerx_sales/"]{content:url("/assets/ledgerx/images/apps/sales.svg")}
+img[src*="/assets/payment_network/"]{content:url("/assets/ledgerx/images/apps/payments.svg")}
+/* Roster header logo (an inline SVG) */
+a[href*="hr-setup"] > svg{background:url("/assets/ledgerx/images/apps/hr.svg") center / contain no-repeat;border-radius:6px}
+a[href*="hr-setup"] > svg > *{display:none}
