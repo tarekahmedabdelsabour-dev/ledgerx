@@ -54,12 +54,28 @@
 		try {
 			if (window.indexedDB && indexedDB.databases) jobs.push(indexedDB.databases().then(function (d) { d.forEach(function (x) { if (x.name) indexedDB.deleteDatabase(x.name); }); }));
 		} catch (e) {}
+		// The desk keeps doctype and page definitions (with their translated texts) in localStorage and only
+		// drops them on a version change or a quick double reload: drop them now, the way a hard reload does.
 		try {
-			["__messages", "translations", "frappe.boot", "boot"].forEach(function (k) { localStorage.removeItem(k); });
-			Object.keys(localStorage).forEach(function (k) { if (/translat|messages|boot/i.test(k)) localStorage.removeItem(k); });
+			["_last_load", "_version_number", "metadata_version", "page_info", "last_visited"].forEach(function (k) { localStorage.removeItem(k); });
+			Object.keys(localStorage).forEach(function (k) {
+				if (/^_page:|^_doctype:|^_report:|translat|messages|boot/i.test(k)) localStorage.removeItem(k);
+			});
+		} catch (e) {}
+		try { sessionStorage.clear(); } catch (e) {}
+		// API answers the browser kept (translated labels, sidebar, counts): fetch each again, bypassing its cache.
+		try {
+			var seen = {};
+			performance.getEntriesByType("resource").forEach(function (r) {
+				var u = r.name;
+				if (u.indexOf(location.origin) === 0 && u.indexOf("/api/") > -1 && !seen[u] && Object.keys(seen).length < 80) {
+					seen[u] = 1;
+					jobs.push(fetch(u, { cache: "reload", credentials: "same-origin" }));
+				}
+			});
 		} catch (e) {}
 		try { jobs.push(fetch(location.href, { cache: "reload", credentials: "same-origin" })); } catch (e) {}
-		var go = function () { window.location.reload(); };
+		var fired = false, go = function () { if (fired) return; fired = true; window.location.reload(); };
 		Promise.all(jobs.map(function (p) { return p.catch(function () {}); })).then(go, go);
 		setTimeout(go, 2500);
 	}
