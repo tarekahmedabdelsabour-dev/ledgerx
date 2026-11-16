@@ -90,6 +90,16 @@
 
 	function switchTo(lang) {
 		if (isGuest()) return done(lang);
+		var f = window.frappe;
+		if (f && f.call && f.session && f.session.user) {
+			// desk: the same call the toggle first used (it worked); then refresh the browser caches
+			return f.call({
+				method: "frappe.client.set_value",
+				args: { doctype: "User", name: f.session.user, fieldname: "language", value: lang },
+				callback: function () { done(lang); },
+				error: function () { done(lang); },
+			});
+		}
 		var token = csrf();
 		var go = function (t) { post(lang, t).then(function () { done(lang); }, function () { done(lang); }); };
 		if (token && token !== "{{ csrf_token }}") return go(token);
