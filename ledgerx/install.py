@@ -39,6 +39,7 @@ BASE_PRINT_STYLE = "Redesign"  # Frappe's default; LedgerX = a copy of it + the 
 
 def after_install():
 	apply_branding()
+	ensure_help_menu()
 	apply_print_style()
 	remove_videos()
 
@@ -46,8 +47,40 @@ def after_install():
 def after_migrate():
 	apply_translation_overrides()
 	apply_branding()
+	ensure_help_menu()
 	apply_print_style()
 	remove_videos()
+
+
+DOCS_ITEM = "LedgerX Docs"
+
+
+def ensure_help_menu():
+	"""Help menu: LedgerX documentation first, the external standard links hidden."""
+	try:
+		ns = frappe.get_doc("Navbar Settings")
+		changed = False
+		found = None
+		for row in ns.help_dropdown or []:
+			if row.item_label == DOCS_ITEM:
+				found = row
+			elif not row.hidden and (row.route or "").startswith("http"):
+				row.hidden = 1
+				changed = True
+		if not found:
+			ns.append(
+				"help_dropdown",
+				{"item_label": DOCS_ITEM, "item_type": "Route", "route": "/docs", "is_standard": 0, "hidden": 0},
+			)
+			changed = True
+		elif found.route != "/docs" or found.hidden:
+			found.route, found.hidden = "/docs", 0
+			changed = True
+		if changed:
+			ns.flags.ignore_permissions = True
+			ns.save()
+	except Exception:
+		frappe.log_error(title="LedgerX: help menu")
 
 
 def apply_translation_overrides():
