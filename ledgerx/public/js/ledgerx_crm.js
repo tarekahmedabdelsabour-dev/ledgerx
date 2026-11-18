@@ -158,3 +158,25 @@
 	run();
 	detectLanguage();
 })();
+
+// Floating link to the LedgerX documentation (the CRM / HR apps have no desk Help menu).
+(function () {
+	function add() {
+		if (!document.body || document.getElementById("lx-docs-fab")) return;
+		var ar = (document.documentElement.lang || "ar").slice(0, 2) !== "en";
+		var a = document.createElement("a");
+		a.id = "lx-docs-fab";
+		a.href = "/docs";
+		a.target = "_blank";
+		a.rel = "noopener";
+		a.title = ar ? "دليل LedgerX" : "LedgerX Docs";
+		a.textContent = ar ? "الدليل" : "Docs";
+		a.style.cssText = "position:fixed;bottom:16px;inset-inline-end:16px;z-index:9999;background:#0B5E78;color:#fff;" +
+			"padding:8px 16px;border-radius:999px;font:600 13px system-ui,Tahoma,sans-serif;text-decoration:none;" +
+			"box-shadow:0 4px 14px rgba(0,0,0,.25)";
+		document.body.appendChild(a);
+	}
+	if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", add);
+	else add();
+	setInterval(add, 2000);
+})();
