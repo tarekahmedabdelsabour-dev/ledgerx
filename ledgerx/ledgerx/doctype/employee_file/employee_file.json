@@ -1,0 +1,55 @@
+{
+ "doctype": "DocType",
+ "name": "Employee File",
+ "module": "LedgerX",
+ "istable": 1,
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "track_changes": 0,
+ "fields": [
+  {
+   "fieldname": "document_type",
+   "label": "Document Type",
+   "fieldtype": "Link",
+   "options": "Employee Document Type",
+   "reqd": 1,
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "attachment",
+   "label": "File",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "document_number",
+   "label": "Number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "issue_date",
+   "label": "Issue Date",
+   "fieldtype": "Date"
+  },
+  {
+   "fieldname": "expiry_date",
+   "label": "Expiry Date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "notes",
+   "label": "Notes",
+   "fieldtype": "Small Text"
+  }
+ ],
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -40,6 +40,7 @@ BASE_PRINT_STYLE = "Redesign"  # Frappe's default; LedgerX = a copy of it + the 
 def after_install():
 	apply_branding()
 	ensure_help_menu()
+	ensure_employee_documents()
 	apply_print_style()
 	remove_videos()
 
@@ -48,8 +49,60 @@ def after_migrate():
 	apply_translation_overrides()
 	apply_branding()
 	ensure_help_menu()
+	ensure_employee_documents()
 	apply_print_style()
 	remove_videos()
+
+
+EMPLOYEE_DOC_TYPES = [
+	# (name, required, has_expiry)
+	("شهادة الميلاد", 1, 0),
+	("بطاقة الرقم القومي", 1, 1),
+	("المؤهل الدراسي", 1, 0),
+	("موقف الخدمة العسكرية", 0, 0),
+	("صحيفة الحالة الجنائية", 0, 1),
+	("عقد العمل", 1, 0),
+	("شهادة الخبرة", 0, 0),
+	("الشهادة الصحية", 0, 1),
+	("جواز السفر", 0, 1),
+	("رخصة القيادة", 0, 1),
+	("التأمينات الاجتماعية", 0, 0),
+	("صور شخصية", 0, 0),
+	("مستند آخر", 0, 0),
+]
+
+
+def ensure_employee_documents():
+	"""Employee file: a Documents tab (birth certificate, qualification, military status...) on Employee.
+
+	The employee photo is Employee's own image field (click the picture at the top of the form).
+	"""
+	try:
+		if not frappe.db.exists("DocType", "Employee File"):
+			return
+		for name, required, has_expiry in EMPLOYEE_DOC_TYPES:
+			if not frappe.db.exists("Employee Document Type", name):
+				frappe.get_doc(
+					{"doctype": "Employee Document Type", "type_name": name, "required": required, "has_expiry": has_expiry}
+				).insert(ignore_permissions=True)
+
+		meta = frappe.get_meta("Employee")
+		if meta.has_field("lx_documents"):
+			return
+		last = [d.fieldname for d in meta.fields if d.fieldname][-1]
+		for i, field in enumerate(
+			[
+				{"fieldname": "lx_documents_tab", "fieldtype": "Tab Break", "label": "Employee Documents"},
+				{"fieldname": "lx_documents", "fieldtype": "Table", "label": "Documents", "options": "Employee File"},
+			]
+		):
+			frappe.get_doc(
+				{"doctype": "Custom Field", "dt": "Employee", "insert_after": last, **field}
+			).insert(ignore_permissions=True)
+			last = field["fieldname"]
+		frappe.clear_cache(doctype="Employee")
+	except Exception:
+		frappe.log_error(title="LedgerX: employee documents")
 
 
 DOCS_ITEM = "LedgerX Docs"
