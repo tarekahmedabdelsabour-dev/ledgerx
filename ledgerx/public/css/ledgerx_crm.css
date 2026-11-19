@@ -72,6 +72,7 @@ img[src*="/assets/ledgerx_hotels/"]{content:url("/assets/ledgerx/images/apps/hot
 img[src*="/assets/ledgerx_showroom/"]{content:url("/assets/ledgerx/images/apps/showroom.svg")}
 img[src*="/assets/ledgerx_education/"]{content:url("/assets/ledgerx/images/apps/education.svg")}
 img[src*="/assets/ledgerx_realestate/"]{content:url("/assets/ledgerx/images/apps/realestate.svg")}
+img[src*="/assets/ledgerx_manufacturing/"]{content:url("/assets/ledgerx/images/apps/factory.svg")}
 /* Roster header logo (an inline SVG) */
 a[href*="hr-setup"] > svg{background:url("/assets/ledgerx/images/apps/hr.svg") center / contain no-repeat;border-radius:6px}
 a[href*="hr-setup"] > svg > *{display:none}
