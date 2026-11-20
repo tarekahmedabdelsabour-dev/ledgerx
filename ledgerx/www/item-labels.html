@@ -1,0 +1,34 @@
+{% extends "templates/web.html" %}
+{% block navbar %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block page_content %}
+<style>
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#eef2f5}
+.bar{padding:10px 16px;background:#0B2A5B;color:#fff;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.bar button{padding:6px 16px;border:0;border-radius:6px;font:inherit;cursor:pointer}
+.note{padding:8px 16px;background:#fff7e0;color:#7a5200;font-size:13px}
+.sheet{display:flex;flex-wrap:wrap;gap:6px;padding:12px}
+.label{width:{{ w }}mm;height:{{ h }}mm;background:#fff;border:1px dashed #9aa;padding:1.5mm;box-sizing:border-box;text-align:center;overflow:hidden;page-break-inside:avoid;display:flex;flex-direction:column;justify-content:space-between}
+.label .t{font-weight:700;font-size:{% if h < 30 %}8{% else %}10{% endif %}pt;line-height:1.1;max-height:{{ (h * 0.28)|round|int }}mm;overflow:hidden}
+.label .p{font-weight:700;font-size:{% if h < 30 %}10{% else %}13{% endif %}pt}
+.label svg{width:100%;height:{{ (h * 0.42)|round|int }}mm}
+{% if a4 %}@page{size:A4;margin:8mm 5mm}.sheet{gap:0;padding:0}{% else %}@page{size:{{ w }}mm {{ h }}mm;margin:0}{% endif %}
+@media print{.bar,.note{display:none}body{background:#fff}.sheet{padding:0;gap:0}.label{border:0}{% if not a4 %}.sheet{display:block}.label{page-break-after:always}{% endif %}}
+</style>
+
+<div class="bar"><b>{{ title }}</b><span>{{ labels|length }}</span><button onclick="window.print()">&#128424; {{ _("Print") }}</button>
+<span style="font-size:12px">{{ _("Size") }}: {{ size }}{% if show_price and price_list %} &middot; {{ price_list }}{% endif %}</span></div>
+{% if no_barcode %}<div class="note">{{ _("Some items have no barcode, so their code is printed instead. Create barcodes first from the Item Barcodes page.") }} ({{ no_barcode }})</div>{% endif %}
+{% if truncated %}<div class="note">{{ _("Only the first 2000 labels are shown.") }}</div>{% endif %}
+<div class="sheet">
+{% for l in labels %}
+<div class="label"><div class="t">{{ l.title }}</div><svg class="bc" data-code="{{ l.code }}"></svg>{% if show_price and l.price %}<div class="p">{{ l.price_text }} {{ currency }}</div>{% endif %}</div>
+{% endfor %}
+</div>
+<script src="/assets/ledgerx/js/jsbarcode.code128.min.js"></script>
+<script>
+document.querySelectorAll("svg.bc").forEach(function (el) {
+  try { JsBarcode(el, el.dataset.code, {format: "CODE128", displayValue: true, fontSize: 12, height: 40, margin: 0}); } catch (e) {}
+});
+</script>
+{% endblock %}

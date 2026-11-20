@@ -1,0 +1,91 @@
+{% extends "templates/web.html" %}
+{% block navbar %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block page_content %}
+<style>
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#eef2f5;color:#1b2733}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:20px;margin:6px 0 14px}
+.card{background:#fff;border-radius:10px;padding:14px 16px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+label{display:block;font-size:13px;margin:8px 0 3px;color:#456}
+select,input{width:100%;padding:8px;border:1px solid #bcc7d1;border-radius:6px;font:inherit;box-sizing:border-box}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row>div{flex:1;min-width:150px}
+button{padding:9px 18px;border:0;border-radius:6px;background:#0B2A5B;color:#fff;font:inherit;cursor:pointer;margin:10px 8px 0 0}
+button.sec{background:#5b6b7b}button:disabled{opacity:.5;cursor:default}
+.stat{font-size:15px;margin:8px 0}.stat b{font-size:20px}
+.msg{font-size:13px;margin-top:8px;white-space:pre-wrap}.err{color:#b42318}.ok{color:#166534}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}td,th{border-bottom:1px solid #e3e8ee;padding:4px 6px;text-align:start}
+</style>
+<div class="wrap">
+<h1>{{ _("Item Barcodes") }}</h1>
+
+<div class="card">
+<label>{{ _("Item Group") }}</label>
+<select id="grp"><option value="">{{ _("All") }}</option>{% for g in groups %}<option>{{ g }}</option>{% endfor %}</select>
+<div class="stat" id="stat">&nbsp;</div>
+<button class="sec" id="chk">{{ _("Check") }}</button>
+</div>
+
+<div class="card">
+<b>{{ _("Create barcodes for items without one") }}</b>
+<div class="msg">{{ _("Each item gets an in-store EAN-13 number starting with 2 (the range reserved for shops), saved in the item's Barcodes table so the cashier screen finds it when scanned.") }}</div>
+{% if can_generate %}
+<label>{{ _("How many items at most") }}</label><input id="lim" type="number" value="200" min="1" max="1000">
+<button class="sec" id="prev">{{ _("Preview") }}</button><button id="gen" disabled>{{ _("Create barcodes") }}</button>
+{% else %}<div class="msg err">{{ _("Only a Stock Manager can create barcodes.") }}</div>{% endif %}
+<div class="msg" id="out"></div>
+</div>
+
+<div class="card">
+<b>{{ _("Print labels") }}</b>
+<div class="row">
+<div><label>{{ _("Size") }}</label><select id="size"><option value="62x38">62 x 38 mm</option><option value="50x30">50 x 30 mm</option><option value="40x25">40 x 25 mm</option><option value="a4">A4 sheet (70 x 37 mm)</option></select></div>
+<div><label>{{ _("Copies of each label") }}</label><input id="cp" type="number" value="1" min="1" max="100"></div>
+<div><label>{{ _("Price list") }}</label><select id="pl"><option value="">{{ _("Default") }}</option>{% for p in price_lists %}<option>{{ p }}</option>{% endfor %}</select></div>
+<div><label>{{ _("Show price") }}</label><select id="pr"><option value="1">{{ _("Yes") }}</option><option value="0">{{ _("No") }}</option></select></div>
+</div>
+<button id="prt">{{ _("Open labels for the chosen group") }}</button>
+<div class="msg">{{ _("To print only some items, select them in the Item list and use Menu > Print Barcode Labels.") }}</div>
+</div>
+</div>
+<script>
+var CSRF = "{{ csrf_token }}";
+function $(i){return document.getElementById(i);}
+function call(m, args){
+  return fetch("/api/method/ledgerx.barcodes." + m, {method: "POST", credentials: "same-origin", headers: {"Content-Type": "application/json", "X-Frappe-CSRF-Token": CSRF}, body: JSON.stringify(args || {})})
+    .then(function (r) { return r.json().then(function (j) { if (!r.ok) { var t = ""; try { t = JSON.parse(j._server_messages)[0]; t = JSON.parse(t).message; } catch (e) { t = j.exc_type || r.status; } throw new Error(String(t).replace(/<[^>]+>/g, "")); } return j.message; }); });
+}
+function esc(s){return String(s).replace(/[&<>"]/g, function (c) { return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]; });}
+function check(){
+  return call("barcode_summary", {item_group: $("grp").value}).then(function (r) {
+    $("stat").innerHTML = "{{ _('Sales items') }}: <b>" + r.total + "</b> &nbsp; {{ _('Without a barcode') }}: <b>" + r.missing + "</b>";
+  }).catch(function (e) { $("stat").textContent = e.message; });
+}
+$("chk").onclick = check; $("grp").onchange = function () { $("gen") && ($("gen").disabled = true); check(); };
+if ($("prev")) {
+  $("prev").onclick = function () {
+    $("out").className = "msg"; $("out").textContent = "...";
+    call("generate_barcodes", {item_group: $("grp").value, limit: $("lim").value, dry_run: 1}).then(function (r) {
+      var h = "{{ _('Would create') }}: <b>" + r.count + "</b>" + (r.remaining ? " &nbsp; ({{ _('still without a barcode after this run') }}: " + r.remaining + ")" : "");
+      h += "<table>" + r.sample.map(function (x) { return "<tr><td>" + esc(x.item) + "</td><td>" + esc(x.barcode) + "</td></tr>"; }).join("") + "</table>";
+      $("out").innerHTML = h; $("gen").disabled = !r.count;
+    }).catch(function (e) { $("out").className = "msg err"; $("out").textContent = e.message; });
+  };
+  $("gen").onclick = function () {
+    if (!confirm("{{ _('Create the barcodes now? This changes the items.') }}")) return;
+    $("gen").disabled = true; $("out").textContent = "...";
+    call("generate_barcodes", {item_group: $("grp").value, limit: $("lim").value, dry_run: 0}).then(function (r) {
+      var h = "<span class='ok'>{{ _('Created') }}: <b>" + r.count + "</b></span>" + (r.failed_count ? " &nbsp; <span class='err'>{{ _('Failed') }}: " + r.failed_count + "</span>" : "") + " &nbsp; {{ _('Still without a barcode') }}: " + r.remaining;
+      if (r.failed && r.failed.length) h += "<table>" + r.failed.map(function (x) { return "<tr><td>" + esc(x.item) + "</td><td class='err'>" + esc(x.error) + "</td></tr>"; }).join("") + "</table>";
+      $("out").innerHTML = h; check();
+    }).catch(function (e) { $("out").className = "msg err"; $("out").textContent = e.message; });
+  };
+}
+$("prt").onclick = function () {
+  var q = "item_group=" + encodeURIComponent($("grp").value) + "&size=" + $("size").value + "&copies=" + $("cp").value + "&price_list=" + encodeURIComponent($("pl").value) + "&price=" + $("pr").value;
+  if (!$("grp").value && !confirm("{{ _('Print labels for ALL sales items (up to 500)?') }}")) return;
+  window.open("/item-labels?" + q, "_blank");
+};
+check();
+</script>
+{% endblock %}

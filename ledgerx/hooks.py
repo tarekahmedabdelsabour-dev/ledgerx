@@ -33,6 +33,10 @@ app_include_js = [
 	f"/assets/ledgerx/js/ledgerx_lang.js?v={app_version}",
 ]
 
+# Item barcodes: label printing on the Item form and list.
+doctype_js = {"Item": "public/js/ledgerx_item_barcode.js"}
+doctype_list_js = {"Item": "public/js/ledgerx_item_barcode.js"}
+
 # Website, login page, web forms and portal.
 web_include_css = f"/assets/ledgerx/css/ledgerx_web.css?v={app_version}"
 web_include_js = [f"/assets/ledgerx/js/ledgerx_lang.js?v={app_version}"]

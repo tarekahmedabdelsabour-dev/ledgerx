@@ -633,3 +633,41 @@ Type Name,اسم النوع
 Required for every employee,مطلوب لكل موظف
 Has an expiry date,له تاريخ انتهاء
 Description,الوصف
+Item Barcodes,باركود الأصناف
+Item Barcode Labels,ملصقات باركود الأصناف
+Print,طباعة
+Size,المقاس
+"Some items have no barcode, so their code is printed instead. Create barcodes first from the Item Barcodes page.",بعض الأصناف ليس لها باركود فتمت طباعة كودها بدلًا منه. أنشئ الباركود أولًا من صفحة باركود الأصناف.
+Only the first 2000 labels are shown.,يتم عرض أول 2000 ملصق فقط.
+Item Group,مجموعة الأصناف
+All,الكل
+Sales items,أصناف البيع
+Without a barcode,بدون باركود
+Check,فحص
+Create barcodes for items without one,إنشاء باركود للأصناف التي ليس لها باركود
+"Each item gets an in-store EAN-13 number starting with 2 (the range reserved for shops), saved in the item's Barcodes table so the cashier screen finds it when scanned.",يحصل كل صنف على رقم EAN-13 داخلي يبدأ بالرقم 2 (النطاق المخصص للمحلات)، ويُحفظ في جدول الباركود بالصنف حتى تجده شاشة الكاشير عند المسح.
+How many items at most,أقصى عدد من الأصناف
+Preview,معاينة
+Create barcodes,إنشاء الباركود
+Only a Stock Manager can create barcodes.,يمكن لمدير المخزون فقط إنشاء الباركود.
+Print labels,طباعة الملصقات
+Copies of each label,عدد نسخ كل ملصق
+Price list,قائمة الأسعار
+Default,الافتراضية
+Show price,إظهار السعر
+Yes,نعم
+No,لا
+Open labels for the chosen group,فتح ملصقات المجموعة المختارة
+"To print only some items, select them in the Item list and use Menu > Print Barcode Labels.",لطباعة بعض الأصناف فقط، حدّدها في قائمة الأصناف ثم استخدم القائمة > طباعة ملصقات الباركود.
+Would create,سيتم إنشاء
+still without a barcode after this run,ستبقى بدون باركود بعد هذه الدفعة
+Create the barcodes now? This changes the items.,هل تريد إنشاء الباركود الآن؟ هذا سيعدّل الأصناف.
+Created,تم إنشاء
+Failed,فشل
+Still without a barcode,ما زالت بدون باركود
+Print labels for ALL sales items (up to 500)?,طباعة ملصقات لكل أصناف البيع (حتى 500)؟
+Item Group not found.,مجموعة الأصناف غير موجودة.
+Barcode already exists,الباركود موجود بالفعل
+Print Barcode Label,طباعة ملصق الباركود
+Print Barcode Labels,طباعة ملصقات الباركود
+Actions,إجراءات
