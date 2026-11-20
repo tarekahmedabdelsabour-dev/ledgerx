@@ -1,4 +1,4 @@
-Operations Research is a decision-support module connected to the other apps. It reads your live data (items, BOMs, stock, Work Orders, Sales Orders, Purchase requests, prices) and recommends decisions and analyses questions in thirteen areas. Find it on the desktop as the **Operations Research** tile (route `/desk/operations-research`).
+Operations Research is a decision-support module connected to the other apps. It reads your live data (items, BOMs, stock, Work Orders, Sales Orders, Purchase requests, prices, and also vehicles from the Fleet app, asset depreciation from Assets and open deals from the CRM app) and recommends decisions and analyses questions in thirteen areas. Find it on the desktop as the **Operations Research** tile (route `/desk/operations-research`).
 
 ## Common flow
 
@@ -31,7 +31,7 @@ Computes the ABC class, economic order quantity, safety stock for the service le
 The cheapest shipping of one item from warehouses with stock to warehouses with open transfer requests. Lane costs are entered by hand, or computed as cost per km from Address coordinates. You can block specific lanes, and unmet demand is reported. Draft: **Stock Entry** (Material Transfer).
 
 ### Route Plan
-Delivery routes from open Sales Orders by vehicle capacity, with the stop order, total km, a lower bound and the % gap. Distance is straight-line, not road distance. This plan creates no draft.
+Delivery routes from open Sales Orders by vehicle capacity, with the stop order, total km, a lower bound and the % gap. Distance is straight-line, not road distance. With a vehicle list it can create draft **Fleet Trip** documents (see **Connected to the other apps**); otherwise it creates no draft.
 
 ### Schedule Plan
 The order of operations of open Work Orders on workstations, with start and end per operation. It takes the best of several dispatch rules and shows a lower bound and the gap. Working days are counted as consecutive calendar days. This plan creates no draft.
@@ -93,6 +93,30 @@ Answers: were my earlier plans right?
 - Shows: average error %, bias %, tracking signal and a verdict: **Reliable**, **Usable with a buffer** or **Unreliable**.
 - Only plans old enough are checked.
 
+## Connected to the other apps
+
+Operations Research reads three more parts of LedgerX. All of these only read data and fill your tables; you can edit every number before you press **Solve**.
+
+### Fleet: vehicles in the Route Plan
+- The **Route Plan** has a new **Vehicles** table: vehicle, driver, capacity and cost per km.
+- From **Plan** press **Load Vehicles**. It reads the active vehicles from the Fleet app with their payload (kg). The cost per km is computed from the fleet's fuel logs plus the completed fleet work orders of the last 12 months, divided by the distance in the fuel logs. Driver pay, insurance and depreciation are not included. Vehicles with under 500 km of records are flagged.
+- **Load Measured In** = **Quantity** or **Weight (kg)**. Choose **Weight (kg)** when the vehicles carry payload in kg; this needs the weight on the items.
+- With a vehicle list the plan uses the cheapest vehicles that fit, and each vehicle is on at most one route. Up to 10 stops it is solved **exactly**: the best split of the stops among the vehicles and the best stop order for the cost. Beyond 10 stops it is a strong heuristic with a distance lower bound and a gap.
+- The result shows the vehicle and the cost of each route and the total cost.
+- The button **Create Fleet Trips (drafts)** creates one **draft** Fleet Trip per route: vehicle, driver, origin (the depot), destination (the last stop), distance, cargo weight when the plan is weight-based, and a description listing the stops in order. Review each trip before you use it.
+- Without a vehicle list the earlier mode with identical vehicles still works. Distances are straight-line.
+
+### Assets
+- **Lease or Buy Analysis**: choose an **Existing Asset** and press **Plan > Load Data**. It fills the purchase price, the value at the end and the years from the asset's depreciation settings. It also shows the book value, the remaining depreciation years and the depreciation per year, for information only. The comparison uses the cost of a **new** asset, because depreciation is not a cash flow.
+- **Break Even Analysis**: tick **Add Asset Depreciation of the Period**. Then **Load Data** adds the scheduled depreciation of the active asset schedules in the history period as a fixed cost row that is **not paid in cash**. So it counts in the break-even but not in the cash break-even.
+
+### CRM: expected demand from deals
+- In the **Reorder Plan** and the **Product Mix Plan** tick **Add Expected Demand From CRM Deals**.
+- It reads the open deals (not Won or Lost) of the CRM app that close within the horizon: in the Reorder Plan the field **CRM Horizon (days)** (default 90), in the Product Mix Plan the planning days. It takes the products of those deals and weights each quantity by the deal probability: the deal's own probability, else its status probability, else the default in **OR Settings** (30%).
+- **Reorder Plan**: the quantity per item is shown in **Expected From CRM Deals** and is added to the yearly demand as a yearly rate (quantity x 365 / horizon). Items that appear only in deals are included.
+- **Product Mix Plan**: the expected quantity is added to the demand cap of each product, together with the open Sales Orders.
+- These quantities are expectations, not orders. Deals without a closing date are counted and flagged.
+
 ## Coordinates
 
 **Address** has new fields **Latitude** and **Longitude**. Routes and distribution need them: customers through their address, warehouses through an address linked to the warehouse.
@@ -111,5 +135,8 @@ Answers: were my earlier plans right?
 - Every result is re-checked by independent code (feasibility, and for linear problems an optimality certificate) before it is called verified.
 - Risk simulations assume independent normal variation of each input; real inputs often move together.
 - The review depends on the age of the plans: a recent plan cannot be checked yet.
+- The CRM link depends on the deals having products and probabilities; deals without them add nothing or fall back to the default probability.
+- The fleet cost per km is only as good as the fuel records, and it leaves out driver pay, insurance and depreciation.
+- Route distances are straight-line, not road distances.
 - Every new analysis states a **Read before using** list: read it before you rely on the result.
 > ! The tool supports your decision, it does not replace it: review the draft before you submit it.
