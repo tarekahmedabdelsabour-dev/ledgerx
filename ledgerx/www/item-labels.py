@@ -28,7 +28,7 @@ def get_context(context):
 	context.price_list = price_list or ""
 	context.show_price = 0 if form.get("price") == "0" else 1
 	context.size = size
-	context.w, context.h = SIZES[size]
+	context.label_w, context.label_h = SIZES[size]
 	context.a4 = size == "a4"
 	context.truncated = len(rows) > 2000
 	context.currency = frappe.db.get_default("currency") or ""
