@@ -77,6 +77,7 @@ img[src*="/assets/ledgerx_research/"]{content:url("/assets/ledgerx/images/apps/r
 img[src*="/assets/ledgerx_pharmacy/"]{content:url("/assets/ledgerx/images/apps/pharmacy.svg?v=1.9.28")}
 img[src*="/assets/ledgerx_malls/"]{content:url("/assets/ledgerx/images/apps/malls.svg?v=1.9.28")}
 img[src*="/assets/ledgerx_tax/"]{content:url("/assets/ledgerx/images/apps/einvoicing.svg?v=1.9.29")}
+img[src*="/assets/ledgerx_store/"]{content:url("/assets/ledgerx/images/apps/store.svg?v=1.9.30")}
 /* Roster header logo (an inline SVG) */
 a[href*="hr-setup"] > svg{background:url("/assets/ledgerx/images/apps/hr.svg?v=1.9.28") center / contain no-repeat;border-radius:6px}
 a[href*="hr-setup"] > svg > *{display:none}

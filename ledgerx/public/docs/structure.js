@@ -36,7 +36,8 @@ window.LXD={body:{ar:{},en:{}},sections:[
  {id:"research",t:{ar:"بحوث العمليات",en:"Operations Research"}},
  {id:"pharmacy",t:{ar:"الصيدليات",en:"Pharmacy"}},
  {id:"malls",t:{ar:"المولات التجارية",en:"Commercial malls"}},
- {id:"einvoicing",t:{ar:"الفاتورة الإلكترونية",en:"E-invoicing"}}]},
+ {id:"einvoicing",t:{ar:"الفاتورة الإلكترونية",en:"E-invoicing"}},
+ {id:"store",t:{ar:"المتجر والموقع",en:"Store and website"}}]},
 {id:"admin",t:{ar:"الإدارة والتخصيص",en:"Administration"},p:[
  {id:"language",t:{ar:"اللغة والمظهر",en:"Language and appearance"}},
  {id:"install",t:{ar:"التثبيت والتحديث",en:"Install and update"}},
