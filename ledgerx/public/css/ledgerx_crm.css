@@ -61,23 +61,23 @@ html[dir="rtl"] input[type="tel"],
 html[dir="rtl"] input[type="number"] { direction: ltr; text-align: right; }
 
 /* One LedgerX tile per module: same background, a glyph that says which module it is */
-img[src*="/assets/erpnext/"]{content:url("/assets/ledgerx/images/apps/accounting.svg")}
-img[src*="/assets/crm/"]{content:url("/assets/ledgerx/images/apps/crm.svg")}
-img[src*="/assets/hrms/"]{content:url("/assets/ledgerx/images/apps/hr.svg")}
-img[src*="/assets/lending/"]{content:url("/assets/ledgerx/images/apps/lending.svg")}
-img[src*="/assets/ledgerx_fleet/"]{content:url("/assets/ledgerx/images/apps/fleet.svg")}
-img[src*="/assets/ledgerx_sales/"]{content:url("/assets/ledgerx/images/apps/sales.svg")}
-img[src*="/assets/payment_network/"]{content:url("/assets/ledgerx/images/apps/payments.svg")}
-img[src*="/assets/ledgerx_hotels/"]{content:url("/assets/ledgerx/images/apps/hotels.svg")}
-img[src*="/assets/ledgerx_showroom/"]{content:url("/assets/ledgerx/images/apps/showroom.svg")}
-img[src*="/assets/ledgerx_education/"]{content:url("/assets/ledgerx/images/apps/education.svg")}
-img[src*="/assets/ledgerx_realestate/"]{content:url("/assets/ledgerx/images/apps/realestate.svg")}
-img[src*="/assets/ledgerx_manufacturing/"]{content:url("/assets/ledgerx/images/apps/factory.svg")}
-img[src*="/assets/ledgerx_research/"]{content:url("/assets/ledgerx/images/apps/research.svg")}
-img[src*="/assets/ledgerx_pharmacy/"]{content:url("/assets/ledgerx/images/apps/pharmacy.svg")}
-img[src*="/assets/ledgerx_malls/"]{content:url("/assets/ledgerx/images/apps/malls.svg")}
+img[src*="/assets/erpnext/"]{content:url("/assets/ledgerx/images/apps/accounting.svg?v=1.9.28")}
+img[src*="/assets/crm/"]{content:url("/assets/ledgerx/images/apps/crm.svg?v=1.9.28")}
+img[src*="/assets/hrms/"]{content:url("/assets/ledgerx/images/apps/hr.svg?v=1.9.28")}
+img[src*="/assets/lending/"]{content:url("/assets/ledgerx/images/apps/lending.svg?v=1.9.28")}
+img[src*="/assets/ledgerx_fleet/"]{content:url("/assets/ledgerx/images/apps/fleet.svg?v=1.9.28")}
+img[src*="/assets/ledgerx_sales/"]{content:url("/assets/ledgerx/images/apps/sales.svg?v=1.9.28")}
+img[src*="/assets/payment_network/"]{content:url("/assets/ledgerx/images/apps/payments.svg?v=1.9.28")}
+img[src*="/assets/ledgerx_hotels/"]{content:url("/assets/ledgerx/images/apps/hotels.svg?v=1.9.28")}
+img[src*="/assets/ledgerx_showroom/"]{content:url("/assets/ledgerx/images/apps/showroom.svg?v=1.9.28")}
+img[src*="/assets/ledgerx_education/"]{content:url("/assets/ledgerx/images/apps/education.svg?v=1.9.28")}
+img[src*="/assets/ledgerx_realestate/"]{content:url("/assets/ledgerx/images/apps/realestate.svg?v=1.9.28")}
+img[src*="/assets/ledgerx_manufacturing/"]{content:url("/assets/ledgerx/images/apps/factory.svg?v=1.9.28")}
+img[src*="/assets/ledgerx_research/"]{content:url("/assets/ledgerx/images/apps/research.svg?v=1.9.28")}
+img[src*="/assets/ledgerx_pharmacy/"]{content:url("/assets/ledgerx/images/apps/pharmacy.svg?v=1.9.28")}
+img[src*="/assets/ledgerx_malls/"]{content:url("/assets/ledgerx/images/apps/malls.svg?v=1.9.28")}
 /* Roster header logo (an inline SVG) */
-a[href*="hr-setup"] > svg{background:url("/assets/ledgerx/images/apps/hr.svg") center / contain no-repeat;border-radius:6px}
+a[href*="hr-setup"] > svg{background:url("/assets/ledgerx/images/apps/hr.svg?v=1.9.28") center / contain no-repeat;border-radius:6px}
 a[href*="hr-setup"] > svg > *{display:none}
 
 /* Names show in full (wrap) instead of ending with "..." */
