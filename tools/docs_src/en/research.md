@@ -140,3 +140,11 @@ Operations Research reads three more parts of LedgerX. All of these only read da
 - Route distances are straight-line, not road distances.
 - Every new analysis states a **Read before using** list: read it before you rely on the result.
 > ! The tool supports your decision, it does not replace it: review the draft before you submit it.
+
+## Pharmacy chains
+
+When the Pharmacy app is installed:
+
+- **Expired stock is never counted as stock on hand.** The Reorder Plan and the Distribution Plan leave expired batches out and warn you how many units were excluded.
+- **Distribution Plan > Add Needs of Pharmacy Branches**: before **Load Data**, tick it and each branch's need (from its recent sales, its minimum level and its sellable stock) is added as a destination. If a transfer request already exists for the same warehouse, the larger of the two is used, never both.
+- On a **Pharmacy Branch**, the **Analysis** menu opens a Reorder Plan for that branch, or a Distribution Plan for the needs of all branches.

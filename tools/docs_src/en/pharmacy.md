@@ -34,6 +34,10 @@ A refill plan says that a patient takes a medicine every N days. The status (upc
 
 **Expiry Report**, **Drug Alternatives** (same active ingredient, price and stock), **Branch Performance**, **Controlled Drug Register**, **Insurance Receivable** (what each insurer owes, by age) and **Refills Due**.
 
+## Decision analysis
+
+The **Analysis** menu on a branch opens Operations Research plans for it (reorder, distribution of stock to the branches). Expired stock is left out of those plans.
+
 ## Limits
 
 The calculations are covered by automated tests. Review the first invoices, payments and stock entries created by the app before relying on them, and check the insurance journal entry on the insurer's customer account.
