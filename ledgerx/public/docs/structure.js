@@ -33,7 +33,8 @@ window.LXD={body:{ar:{},en:{}},sections:[
  {id:"education",t:{ar:"التعليم",en:"Education"}},
  {id:"realestate",t:{ar:"التطوير العقاري",en:"Real estate"}},
  {id:"factory",t:{ar:"التصنيع",en:"Manufacturing"}},
- {id:"research",t:{ar:"بحوث العمليات",en:"Operations Research"}}]},
+ {id:"research",t:{ar:"بحوث العمليات",en:"Operations Research"}},
+ {id:"pharmacy",t:{ar:"الصيدليات",en:"Pharmacy"}}]},
 {id:"admin",t:{ar:"الإدارة والتخصيص",en:"Administration"},p:[
  {id:"language",t:{ar:"اللغة والمظهر",en:"Language and appearance"}},
  {id:"install",t:{ar:"التثبيت والتحديث",en:"Install and update"}},
