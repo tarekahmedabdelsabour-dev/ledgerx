@@ -44,11 +44,11 @@ def extend_bootinfo(bootinfo):
 
 		if name not in KEEP_LOGO_APPS:
 			icon = APP_ICONS.get(name)
-			app["app_logo_url"] = f"/assets/ledgerx/images/apps/{icon}.svg" if icon else MARK
+			app["app_logo_url"] = f"/assets/ledgerx/images/apps/{icon}.svg?v=1.9.28" if icon else MARK
 
 	# The icon-grid home screen draws Desktop Icon rows, not app_data: give every module's tile (and a workspace
 	# tile that stands for the module itself) the same LedgerX tile, whatever logo the row was created with.
 	for ic in bootinfo.get("desktop_icons") or []:
 		icon = APP_ICONS.get(ic.get("app"))
 		if icon and ic.get("app") not in KEEP_LOGO_APPS and (ic.get("icon_type") == "App" or not ic.get("parent_icon")):
-			ic["logo_url"] = f"/assets/ledgerx/images/apps/{icon}.svg"
+			ic["logo_url"] = f"/assets/ledgerx/images/apps/{icon}.svg?v=1.9.28"
