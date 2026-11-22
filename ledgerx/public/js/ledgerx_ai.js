@@ -237,13 +237,25 @@
 		}).then(function () { state.busy = false; send.disabled = false; input.focus(); });
 	}
 
+	// Administrator, assistant not switched on yet: the panel points to the settings instead of chatting.
+	function setupMode() {
+		body.textContent = "";
+		addMsg("assistant", T("المساعد لسه مش متفعّل. افتح الإعدادات، الصق مفتاح Claude API، علّم «Enabled» واحفظ. الأيقونة دي بتظهر لك إنت بس (كمدير) لحد ما يتفعّل.", "The assistant is not switched on yet. Open the settings, paste your Claude API key, tick Enabled and save. Only administrators see this icon until it is on."));
+		var a = el("a", null, T("فتح إعدادات المساعد", "Open assistant settings")); a.href = "/desk/ledgerx-ai-settings";
+		a.style.cssText = "align-self:flex-start;background:#0F766E;color:#fff;padding:8px 14px;border-radius:10px;text-decoration:none;font-weight:600";
+		body.appendChild(a);
+		input.disabled = true; send.disabled = true;
+		input.placeholder = T("فعّل المساعد الأول", "Switch the assistant on first");
+	}
+
 	function boot() {
 		if (/^\/(login|docs|store|shop)/.test(location.pathname)) return;
 		call("status", null, false).then(function (r) {
 			var m = r.j && r.j.message;
-			if (!r.ok || !m || !m.enabled) return;
-			state.enabled = true; state.lang = m.lang || "ar";
+			if (!r.ok || !m || !(m.enabled || m.setup)) return;
+			state.enabled = !!m.enabled; state.lang = m.lang || "ar";
 			if (!document.getElementById("lx-ai-fab")) build();
+			if (!m.enabled) setupMode();
 		}, function () {});
 	}
 	if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();

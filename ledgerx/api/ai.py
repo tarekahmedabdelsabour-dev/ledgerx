@@ -60,6 +60,8 @@ def status():
 	ok = bool(s.enabled and key and _role_ok(s))
 	limit = int(s.daily_limit or 0)
 	out = {"enabled": ok, "lang": _lang()}
+	if not ok and "System Manager" in frappe.get_roles():
+		out["setup"] = True  # the administrator sees the icon with a link to the settings until it is switched on
 	if ok and limit:
 		out["remaining"] = max(0, limit - _used_today())
 	return out
