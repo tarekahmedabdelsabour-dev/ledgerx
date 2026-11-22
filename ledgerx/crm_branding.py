@@ -39,6 +39,7 @@ def inject(html):
 		b'<link rel="stylesheet" href="/assets/ledgerx/css/ledgerx_crm.css?v=' + v + b'">'
 		b'<script src="/assets/ledgerx/js/ledgerx_crm.js?v=' + v + b'" defer></script>'
 		b'<script src="/assets/ledgerx/js/ledgerx_lang.js?v=' + v + b'" defer></script>'
+		b'<script src="/assets/ledgerx/js/ledgerx_ai.js?v=' + v + b'" defer></script>'
 	)
 	html = html.replace(b"<title>Frappe CRM</title>", b"<title>LedgerX CRM</title>")
 	head_at = html.find(b"<head")

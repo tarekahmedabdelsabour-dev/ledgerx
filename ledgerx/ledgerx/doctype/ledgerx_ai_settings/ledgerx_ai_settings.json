@@ -1,0 +1,91 @@
+{
+ "doctype": "DocType",
+ "name": "LedgerX AI Settings",
+ "module": "LedgerX",
+ "issingle": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "api_key",
+  "model",
+  "limits_section",
+  "max_tokens",
+  "max_rows",
+  "daily_limit",
+  "allowed_role",
+  "extra_section",
+  "instructions"
+ ],
+ "fields": [
+  {
+   "fieldname": "enabled",
+   "label": "Enabled",
+   "fieldtype": "Check",
+   "default": "0"
+  },
+  {
+   "fieldname": "api_key",
+   "label": "Claude API Key",
+   "fieldtype": "Password",
+   "description": "From console.anthropic.com. Stored encrypted; never shown again."
+  },
+  {
+   "fieldname": "model",
+   "label": "Model",
+   "fieldtype": "Data",
+   "default": "claude-sonnet-5-5"
+  },
+  {
+   "fieldname": "limits_section",
+   "label": "Limits",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "max_tokens",
+   "label": "Max Reply Tokens",
+   "fieldtype": "Int",
+   "default": "1500"
+  },
+  {
+   "fieldname": "max_rows",
+   "label": "Max Rows per Table",
+   "fieldtype": "Int",
+   "default": "200"
+  },
+  {
+   "fieldname": "daily_limit",
+   "label": "Questions per User per Day",
+   "fieldtype": "Int",
+   "default": "100"
+  },
+  {
+   "fieldname": "allowed_role",
+   "label": "Only This Role Can Use It",
+   "fieldtype": "Link",
+   "options": "Role",
+   "description": "Leave empty to allow every signed-in user."
+  },
+  {
+   "fieldname": "extra_section",
+   "label": "Instructions",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "instructions",
+   "label": "Extra Instructions",
+   "fieldtype": "Small Text",
+   "description": "Optional notes about your business, added to every conversation."
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

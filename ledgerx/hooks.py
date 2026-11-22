@@ -31,6 +31,7 @@ app_include_js = [
 	f"/assets/ledgerx/js/ledgerx.js?v={app_version}",
 	f"/assets/ledgerx/js/ledgerx_excel.js?v={app_version}",
 	f"/assets/ledgerx/js/ledgerx_lang.js?v={app_version}",
+	f"/assets/ledgerx/js/ledgerx_ai.js?v={app_version}",
 ]
 
 # Item barcodes: label printing on the Item form and list.

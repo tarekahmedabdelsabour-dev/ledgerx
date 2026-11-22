@@ -671,3 +671,16 @@ Barcode already exists,الباركود موجود بالفعل
 Print Barcode Label,طباعة ملصق الباركود
 Print Barcode Labels,طباعة ملصقات الباركود
 Actions,إجراءات
+LedgerX AI Settings,إعدادات مساعد LedgerX
+LedgerX AI Log,سجل مساعد LedgerX
+Claude API Key,مفتاح Claude API
+Model,الموديل
+Limits,الحدود
+Max Reply Tokens,أقصى طول للرد
+Max Rows per Table,أقصى عدد صفوف في الجدول
+Questions per User per Day,عدد الأسئلة لكل مستخدم يوميًا
+Only This Role Can Use It,يستخدمه هذا الدور فقط
+Extra Instructions,تعليمات إضافية
+Tools Used,الأدوات المستخدمة
+Input Tokens,وحدات الإدخال
+Output Tokens,وحدات الإخراج

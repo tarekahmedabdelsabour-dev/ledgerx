@@ -39,6 +39,7 @@ window.LXD={body:{ar:{},en:{}},sections:[
  {id:"einvoicing",t:{ar:"الفاتورة الإلكترونية",en:"E-invoicing"}},
  {id:"store",t:{ar:"المتجر والموقع",en:"Store and website"}}]},
 {id:"admin",t:{ar:"الإدارة والتخصيص",en:"Administration"},p:[
+ {id:"ai",t:{ar:"مساعد الذكاء الاصطناعي",en:"AI assistant"}},
  {id:"language",t:{ar:"اللغة والمظهر",en:"Language and appearance"}},
  {id:"install",t:{ar:"التثبيت والتحديث",en:"Install and update"}},
  {id:"faq",t:{ar:"أسئلة شائعة",en:"FAQ"}}]}

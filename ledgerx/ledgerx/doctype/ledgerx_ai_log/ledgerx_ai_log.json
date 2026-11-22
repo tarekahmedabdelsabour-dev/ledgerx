@@ -1,0 +1,76 @@
+{
+ "doctype": "DocType",
+ "name": "LedgerX AI Log",
+ "module": "LedgerX",
+ "engine": "InnoDB",
+ "autoname": "hash",
+ "field_order": [
+  "user",
+  "question",
+  "answer",
+  "tools_used",
+  "input_tokens",
+  "output_tokens",
+  "error"
+ ],
+ "fields": [
+  {
+   "fieldname": "user",
+   "label": "User",
+   "fieldtype": "Link",
+   "options": "User",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "question",
+   "label": "Question",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "answer",
+   "label": "Answer",
+   "fieldtype": "Long Text",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tools_used",
+   "label": "Tools Used",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "input_tokens",
+   "label": "Input Tokens",
+   "fieldtype": "Int",
+   "read_only": 1
+  },
+  {
+   "fieldname": "output_tokens",
+   "label": "Output Tokens",
+   "fieldtype": "Int",
+   "read_only": 1
+  },
+  {
+   "fieldname": "error",
+   "label": "Error",
+   "fieldtype": "Small Text",
+   "read_only": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "user"
+}
