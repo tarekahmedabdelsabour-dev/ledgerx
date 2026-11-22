@@ -90,7 +90,9 @@
 		var n;
 		while ((n = w.nextNode())) {
 			var p = n.parentNode && n.parentNode.nodeName;
-			if (p === "SCRIPT" || p === "STYLE") continue;
+			if (p === "SCRIPT" || p === "STYLE" || p === "TEXTAREA") continue;
+			// text being typed (notes, comments, emails) belongs to the user: never rewrite it under the editor
+			if (n.parentElement && n.parentElement.closest('[contenteditable="true"],.ProseMirror')) continue;
 			var t = fix(n.nodeValue);
 			if (t !== n.nodeValue) n.nodeValue = t;
 		}
