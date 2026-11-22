@@ -23,7 +23,7 @@ Over-the-counter pharmacy products can be sold; prescription and controlled drug
 
 ## Website
 
-**Store Page** holds pages you write (about, services, policies) and can show them in the menu. **News** shows your published blog posts. The contact form creates a **Store Inquiry** and a **Lead** in the CRM.
+**Store Page** holds pages you write (about, services, policies) and can show them in the menu. **Store Post** holds the news you write; published posts show under News. The contact form creates a **Store Inquiry** and a lead in the CRM (a CRM Lead when the CRM app is installed).
 
 ## Important
 
