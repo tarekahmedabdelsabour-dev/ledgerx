@@ -35,6 +35,7 @@ window.LXD={body:{ar:{},en:{}},sections:[
  {id:"factory",t:{ar:"التصنيع",en:"Manufacturing"}},
  {id:"research",t:{ar:"بحوث العمليات",en:"Operations Research"}},
  {id:"pharmacy",t:{ar:"الصيدليات",en:"Pharmacy"}},
+ {id:"hospital",t:{ar:"المستشفيات",en:"Hospital"}},
  {id:"malls",t:{ar:"المولات التجارية",en:"Commercial malls"}},
  {id:"einvoicing",t:{ar:"الفاتورة الإلكترونية",en:"E-invoicing"}},
  {id:"store",t:{ar:"المتجر والموقع",en:"Store and website"}}]},

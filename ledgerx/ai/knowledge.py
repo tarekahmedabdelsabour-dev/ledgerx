@@ -13,7 +13,7 @@ PAGE_MODULES = {
 	"fleet": ["Fleet Management", "Fleet", "Fleet Maintenance", "Fleet Operations", "Fleet Tracking", "Fleet Reports"],
 	"fieldsales": ["Field Sales"], "payments": ["Payment Network"], "hotels": ["Hotels"], "showroom": ["Showroom"],
 	"education": ["Education"], "realestate": ["Real Estate"], "factory": ["Factory", "Manufacturing"],
-	"research": ["Operations Research"], "pharmacy": ["Pharmacy"], "malls": ["Malls"], "einvoicing": ["E-Invoicing"],
+	"research": ["Operations Research"], "pharmacy": ["Pharmacy"], "hospital": ["Hospital"], "malls": ["Malls"], "einvoicing": ["E-Invoicing"],
 	"store": ["Store"], "invoices": ["Accounts"], "journal": ["Accounts"], "acc-reports": ["Accounts"], "coa": ["Accounts"],
 	"selling": ["Selling"], "buying": ["Buying"], "stock": ["Stock"], "pos": ["Selling", "Accounts"], "crm": ["CRM", "FCRM"],
 	"hr": ["HR", "Payroll"], "projects": ["Projects"], "lending": ["Loan Management", "Lending"],
