@@ -24,7 +24,7 @@ KEEP_LOGO_APPS = ()
 # Every module gets the LedgerX tile with its own glyph (public/images/apps/<file>); any other app gets the plain mark.
 APP_ICONS = {
 	"erpnext": "accounting", "crm": "crm", "hrms": "hr", "lending": "lending",
-	"ledgerx_fleet": "fleet", "ledgerx_sales": "sales", "payment_network": "payments", "ledgerx_hotels": "hotels", "ledgerx_showroom": "showroom", "ledgerx_education": "education", "ledgerx_realestate": "realestate", "ledgerx_manufacturing": "factory", "ledgerx_research": "research", "ledgerx_pharmacy": "pharmacy", "ledgerx_malls": "malls", "ledgerx_tax": "einvoicing", "ledgerx_store": "store",
+	"ledgerx_fleet": "fleet", "ledgerx_sales": "sales", "payment_network": "payments", "ledgerx_hotels": "hotels", "ledgerx_showroom": "showroom", "ledgerx_education": "education", "ledgerx_realestate": "realestate", "ledgerx_manufacturing": "factory", "ledgerx_research": "research", "ledgerx_pharmacy": "pharmacy", "ledgerx_malls": "malls", "ledgerx_tax": "einvoicing", "ledgerx_store": "store", "ledgerx_hospital": "hospital",
 }
 
 

@@ -1,4 +1,4 @@
-__version__ = "1.9.35"
+__version__ = "1.9.36"
 
 
 def _enable_excel():
