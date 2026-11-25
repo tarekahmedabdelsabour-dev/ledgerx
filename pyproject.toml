@@ -5,9 +5,10 @@ authors = [
 ]
 description = "LedgerX - custom branding and interface layer for ERPNext (Arabic + English)"
 requires-python = ">=3.10"
+license = { text = "MIT" }
 readme = "README.md"
 dynamic = ["version"]
-dependencies = []
+dependencies = ["openpyxl>=3.1"]
 
 [build-system]
 requires = ["flit_core >=3.4,<4"]

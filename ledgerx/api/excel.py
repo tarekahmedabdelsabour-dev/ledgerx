@@ -1,6 +1,8 @@
 """Server side of LedgerX's Excel support (see public/js/ledgerx_excel.js and excel_compat.py)."""
 import base64
+import io
 import re
+import zipfile
 
 import frappe
 from frappe import _
@@ -10,12 +12,14 @@ from ledgerx import excel_core
 
 MAX_BYTES = 15 * 1024 * 1024
 MAX_ROWS = 100000
+MAX_UNPACKED = 150 * 1024 * 1024  # a small, highly compressed file must not expand without limit
 DATA_URL = re.compile(r"^data:[^;,]*(?:;[^;,]*)*;base64,(.+)$", re.S)
 
 
-@frappe.whitelist()
+@frappe.whitelist(methods=["POST"])
 def xlsx_to_csv_dataurl(dataurl):
 	"""A chosen .xlsx workbook, returned as the CSV data URL the existing CSV import code expects."""
+	frappe.has_permission("Data Import", "create", throw=True)
 	m = DATA_URL.match(dataurl or "")
 	if not m:
 		frappe.throw(_("Invalid file"))
@@ -23,6 +27,12 @@ def xlsx_to_csv_dataurl(dataurl):
 	if len(content) > MAX_BYTES:
 		frappe.throw(_("The file is too large"))
 	if not excel_core.is_xlsx(content):
+		frappe.throw(_("Please choose an Excel (.xlsx) file"))
+	try:
+		with zipfile.ZipFile(io.BytesIO(content)) as z:
+			if sum(i.file_size for i in z.infolist()) > MAX_UNPACKED:
+				frappe.throw(_("The file is too large"))
+	except zipfile.BadZipFile:
 		frappe.throw(_("Please choose an Excel (.xlsx) file"))
 	rows = excel_core.xlsx_to_rows(content, fmt_date=formatdate)
 	if len(rows) > MAX_ROWS:
