@@ -75,3 +75,47 @@ def doctype_clashes(names_by_app):
 		for n in names:
 			seen.setdefault(n, []).append(app)
 	return {n: sorted(a) for n, a in seen.items() if len(a) > 1}
+
+
+# ---------------------------------------------------------------- correcting a booked document
+def credit_note(invoice, reason):
+	"""A full credit note (return invoice) against a submitted Sales Invoice. The reason is required.
+
+	A booked invoice is never cancelled: the correction is a new, visible document.
+	"""
+	import frappe
+	from frappe import _
+
+	if not (reason or "").strip():
+		frappe.throw(_("Give the reason for the credit note"))
+	if frappe.db.get_value("Sales Invoice", invoice, "docstatus") != 1:
+		frappe.throw(_("The invoice must be submitted"))
+	if frappe.db.exists("Sales Invoice", {"return_against": invoice, "docstatus": 1}):
+		frappe.throw(_("A credit note already exists for this invoice"))
+	from erpnext.controllers.sales_and_purchase_return import make_return_doc
+
+	doc = make_return_doc("Sales Invoice", invoice)
+	doc.update_stock = 0
+	doc.remarks = reason
+	doc.insert(ignore_permissions=True)
+	doc.submit()
+	return doc.name
+
+
+def reverse_journal(journal_entry, remark):
+	"""A new Journal Entry with every line of the original turned around (debit becomes credit)."""
+	import frappe
+	from frappe.utils import nowdate
+
+	je = frappe.get_doc("Journal Entry", journal_entry)
+	rows = []
+	for r in je.accounts:
+		rows.append({
+			"account": r.account, "cost_center": r.cost_center, "party_type": r.party_type, "party": r.party,
+			"debit_in_account_currency": r.credit_in_account_currency, "credit_in_account_currency": r.debit_in_account_currency,
+		})
+	doc = frappe.get_doc({"doctype": "Journal Entry", "voucher_type": "Journal Entry", "company": je.company,
+		"posting_date": nowdate(), "user_remark": remark, "accounts": rows})
+	doc.insert(ignore_permissions=True)
+	doc.submit()
+	return doc.name

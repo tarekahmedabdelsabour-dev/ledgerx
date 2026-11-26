@@ -684,3 +684,8 @@ Extra Instructions,تعليمات إضافية
 Tools Used,الأدوات المستخدمة
 Input Tokens,وحدات الإدخال
 Output Tokens,وحدات الإخراج
+Give the reason for the credit note,اكتب سبب الإشعار الدائن
+The invoice must be submitted,يجب أن تكون الفاتورة معتمدة
+A credit note already exists for this invoice,يوجد إشعار دائن لهذه الفاتورة بالفعل
+{0} must be between {1} and {2} percent,يجب أن تكون {0} بين {1} و{2} بالمئة
+The document is {0},المستند {0}
